@@ -1,0 +1,1198 @@
+2019-05-07 15:20:13 -Starting AppStart on ycya-PC with PID 11056 (D:\XSRT\yyblog-master\yyblog-master\target\classes started by ycya in D:\XSRT\yyblog-master\yyblog-master)
+2019-05-07 15:20:13 -Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+2019-05-07 15:20:13 -No active profile set, falling back to default profiles: default
+2019-05-07 15:20:18 -ApplicationContext registed-->org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fb6037: startup date [Tue May 07 15:20:13 CST 2019]; root of context hierarchy
+2019-05-07 15:20:24 -init datasource error, url: jdbc:mysql://127.0.0.1:3306/tq_quratz?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2094)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2019)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1512)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1575)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:854)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1221)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1217)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:90)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy129.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy91.list(Unknown Source)
+	at net.laoyeye.yyblog.service.impl.TaskServiceImpl.initSchedule(TaskServiceImpl.java:95)
+	at net.laoyeye.yyblog.quartz.listenner.ScheduleJobInitListener.run(ScheduleJobInitListener.java:19)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at net.laoyeye.AppStart.main(AppStart.java:21)
+Caused by: java.sql.SQLException: Access denied for user 'xxxxx'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2035)
+	... 54 common frames omitted
+2019-05-07 15:20:24 -{dataSource-1} init error
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2094)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2019)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1512)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1575)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:854)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1221)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1217)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:90)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy129.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy91.list(Unknown Source)
+	at net.laoyeye.yyblog.service.impl.TaskServiceImpl.initSchedule(TaskServiceImpl.java:95)
+	at net.laoyeye.yyblog.quartz.listenner.ScheduleJobInitListener.run(ScheduleJobInitListener.java:19)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at net.laoyeye.AppStart.main(AppStart.java:21)
+Caused by: java.sql.SQLException: Access denied for user 'xxxxx'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2035)
+	... 54 common frames omitted
+2019-05-07 15:20:24 -Started AppStart in 11.367 seconds (JVM running for 13.426)
+2019-05-07 15:20:28 -create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/tq_quratz?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true, errorCode 0, state 08001
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2094)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2019)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1512)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1575)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2450)
+Caused by: java.sql.SQLException: Access denied for user 'xxxxx'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2035)
+	... 16 common frames omitted
+2019-05-07 15:20:32 -create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/tq_quratz?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true, errorCode 0, state 08001
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2094)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2019)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1512)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1575)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2450)
+Caused by: java.sql.SQLException: Access denied for user 'xxxxx'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2035)
+	... 16 common frames omitted
+2019-05-07 15:20:59 -Starting AppStart on ycya-PC with PID 10924 (D:\XSRT\yyblog-master\yyblog-master\target\classes started by ycya in D:\XSRT\yyblog-master\yyblog-master)
+2019-05-07 15:20:59 -Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+2019-05-07 15:20:59 -No active profile set, falling back to default profiles: default
+2019-05-07 15:21:03 -ApplicationContext registed-->org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fb6037: startup date [Tue May 07 15:20:59 CST 2019]; root of context hierarchy
+2019-05-07 15:21:05 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task order by id asc 
+2019-05-07 15:21:05 -==> Parameters: 
+2019-05-07 15:21:05 -<==      Total: 1
+2019-05-07 15:21:05 -Started AppStart in 6.861 seconds (JVM running for 7.723)
+2019-05-07 15:21:54 -==>  Preparing: SELECT ID, CODE, VALUE, REMARK FROM T_SETTING 
+2019-05-07 15:21:54 -==> Parameters: 
+2019-05-07 15:21:54 -<==      Total: 23
+2019-05-07 15:21:54 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE WHERE DRAFT = false 
+2019-05-07 15:21:54 -==> Parameters: 
+2019-05-07 15:21:54 -<==      Total: 1
+2019-05-07 15:21:54 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 15:21:54 -==> Parameters: 
+2019-05-07 15:21:54 -<==      Total: 4
+2019-05-07 15:21:54 -==>  Preparing: select count(0) from (SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:21:54 -==> Parameters: 
+2019-05-07 15:21:54 -<==      Total: 1
+2019-05-07 15:21:54 -==>  Preparing: SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:21:54 -==> Parameters: 10(Integer)
+2019-05-07 15:21:54 -<==      Total: 4
+2019-05-07 15:21:54 -==>  Preparing: SELECT TT.NAME, COUNT(TTR.TAG_ID) AS CNT FROM T_TAG_REFER TTR LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID GROUP BY TTR.TAG_ID ORDER BY CNT DESC LIMIT 30 
+2019-05-07 15:21:54 -==> Parameters: 
+2019-05-07 15:21:54 -<==      Total: 3
+2019-05-07 15:21:55 -==>  Preparing: select count(0) from (SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:21:55 -==> Parameters: 
+2019-05-07 15:21:55 -<==      Total: 1
+2019-05-07 15:21:55 -==>  Preparing: SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:21:55 -==> Parameters: 10(Integer)
+2019-05-07 15:21:55 -<==      Total: 4
+2019-05-07 15:21:55 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:21:55 -==> Parameters: 152933278046718(Long)
+2019-05-07 15:21:55 -<==      Total: 1
+2019-05-07 15:21:55 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:21:55 -==> Parameters: 153215625734689(Long)
+2019-05-07 15:21:55 -<==      Total: 1
+2019-05-07 15:21:55 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:21:55 -==> Parameters: 152776394790103(Long)
+2019-05-07 15:21:55 -<==      Total: 1
+2019-05-07 15:21:55 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:21:55 -==> Parameters: 152759704083198(Long)
+2019-05-07 15:21:55 -<==      Total: 1
+2019-05-07 15:22:58 -==>  Preparing: SELECT ID, CODE, VALUE, REMARK FROM T_SETTING 
+2019-05-07 15:22:58 -==> Parameters: 
+2019-05-07 15:22:58 -<==      Total: 23
+2019-05-07 15:22:58 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE WHERE DRAFT = false 
+2019-05-07 15:22:58 -==> Parameters: 
+2019-05-07 15:22:58 -<==      Total: 1
+2019-05-07 15:22:58 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 15:22:58 -==> Parameters: 
+2019-05-07 15:22:58 -<==      Total: 4
+2019-05-07 15:22:58 -==>  Preparing: select count(0) from (SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:22:58 -==> Parameters: 
+2019-05-07 15:22:58 -<==      Total: 1
+2019-05-07 15:22:58 -==>  Preparing: SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:22:58 -==> Parameters: 10(Integer)
+2019-05-07 15:22:58 -<==      Total: 4
+2019-05-07 15:22:58 -==>  Preparing: SELECT TT.NAME, COUNT(TTR.TAG_ID) AS CNT FROM T_TAG_REFER TTR LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID GROUP BY TTR.TAG_ID ORDER BY CNT DESC LIMIT 30 
+2019-05-07 15:22:58 -==> Parameters: 
+2019-05-07 15:22:58 -<==      Total: 3
+2019-05-07 15:22:58 -==>  Preparing: select count(0) from (SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:22:58 -==> Parameters: 
+2019-05-07 15:22:58 -<==      Total: 1
+2019-05-07 15:22:58 -==>  Preparing: SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:22:58 -==> Parameters: 10(Integer)
+2019-05-07 15:22:58 -<==      Total: 4
+2019-05-07 15:22:58 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:22:58 -==> Parameters: 152933278046718(Long)
+2019-05-07 15:22:58 -<==      Total: 1
+2019-05-07 15:22:58 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:22:58 -==> Parameters: 153215625734689(Long)
+2019-05-07 15:22:58 -<==      Total: 1
+2019-05-07 15:22:58 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:22:58 -==> Parameters: 152776394790103(Long)
+2019-05-07 15:22:58 -<==      Total: 1
+2019-05-07 15:22:58 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:22:58 -==> Parameters: 152759704083198(Long)
+2019-05-07 15:22:58 -<==      Total: 1
+2019-05-07 15:23:14 -请求地址 : http://localhost:8080/login;JSESSIONID=8af8c6ff-ca4b-482c-bd24-e311d936ec27
+2019-05-07 15:23:14 -HTTP METHOD : GET
+2019-05-07 15:23:14 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LoginController.login
+2019-05-07 15:23:14 -参数 : []
+2019-05-07 15:23:14 -耗时 : 24
+2019-05-07 15:23:14 -返回值 : management/login
+2019-05-07 15:23:26 -请求地址 : http://localhost:8080/login
+2019-05-07 15:23:26 -HTTP METHOD : POST
+2019-05-07 15:23:26 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LoginController.login
+2019-05-07 15:23:26 -参数 : [test, e10adc3949ba59abbe56e057f20f883e, null]
+2019-05-07 15:23:26 -==>  Preparing: SELECT ID, USERNAME, NICKNAME, PASSWORD, AVATAR, EMAIL, ENABLE, OPEN_ID, WX_OPEN_ID, CREATE_TIME, UPDATE_TIME FROM SYS_USER WHERE USERNAME = ? AND ENABLE = true 
+2019-05-07 15:23:26 -==> Parameters: test(String)
+2019-05-07 15:23:26 -<==      Total: 1
+2019-05-07 15:23:26 -耗时 : 12
+2019-05-07 15:23:26 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@4a7c53
+2019-05-07 15:23:26 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:23:26 -==> Parameters: null, 2(Long), test(String), 登陆验证(String), 13(Integer), net.laoyeye.yyblog.web.admin.LoginController.login()(String), [test, e10adc3949ba59abbe56e057f20f883e, null](String), "test"(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:23:26.077(Timestamp)
+2019-05-07 15:23:26 -<==    Updates: 1
+2019-05-07 15:23:27 -==>  Preparing: SELECT DISTINCT sm.perms FROM sys_menu sm LEFT JOIN sys_role_menu srm ON sm.menu_id = srm.menu_id LEFT JOIN sys_user_role sur ON srm.role_id = sur.role_id WHERE sur.user_id = ? 
+2019-05-07 15:23:27 -==> Parameters: 2(Long)
+2019-05-07 15:23:27 -<==      Total: 12
+2019-05-07 15:23:27 -请求地址 : http://localhost:8080/management/index
+2019-05-07 15:23:27 -HTTP METHOD : GET
+2019-05-07 15:23:27 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.index
+2019-05-07 15:23:27 -参数 : [{}]
+2019-05-07 15:23:27 -耗时 : 4
+2019-05-07 15:23:27 -返回值 : management/index
+2019-05-07 15:23:27 -请求地址 : http://localhost:8080/management/home
+2019-05-07 15:23:27 -HTTP METHOD : GET
+2019-05-07 15:23:27 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.home
+2019-05-07 15:23:27 -参数 : [{}]
+2019-05-07 15:23:27 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE 
+2019-05-07 15:23:27 -==> Parameters: 
+2019-05-07 15:23:27 -<==      Total: 1
+2019-05-07 15:23:27 -==>  Preparing: SELECT COUNT(*) FROM T_NOTE 
+2019-05-07 15:23:27 -==> Parameters: 
+2019-05-07 15:23:27 -<==      Total: 1
+2019-05-07 15:23:27 -==>  Preparing: SELECT COUNT(*) FROM T_COMMENT 
+2019-05-07 15:23:27 -==> Parameters: 
+2019-05-07 15:23:27 -<==      Total: 1
+2019-05-07 15:23:27 -==>  Preparing: SELECT TITLE, SUMMARY, CREATE_TIME FROM T_ARTICLE WHERE DRAFT = 0 ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 15:23:27 -==> Parameters: 
+2019-05-07 15:23:27 -<==      Total: 1
+2019-05-07 15:23:27 -==>  Preparing: SELECT TITLE, CONTENT, CREATE_TIME FROM T_NOTE ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 15:23:27 -==> Parameters: 
+2019-05-07 15:23:27 -<==      Total: 1
+2019-05-07 15:23:27 -==>  Preparing: SELECT TC.*, SU.NICKNAME, TA.TITLE FROM T_COMMENT TC, SYS_USER SU, T_ARTICLE TA WHERE SU.ID = TC.USER_ID AND TA.ID = TC.ARTICLE_ID ORDER BY TC.CREATE_TIME DESC LIMIT 1 
+2019-05-07 15:23:27 -==> Parameters: 
+2019-05-07 15:23:27 -<==      Total: 1
+2019-05-07 15:23:27 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 15:23:27 -==> Parameters: 
+2019-05-07 15:23:27 -<==      Total: 4
+2019-05-07 15:23:27 -耗时 : 40
+2019-05-07 15:23:27 -返回值 : management/home
+2019-05-07 15:23:37 -请求地址 : http://localhost:8080/management/profile
+2019-05-07 15:23:37 -HTTP METHOD : GET
+2019-05-07 15:23:37 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.ProfileController.index
+2019-05-07 15:23:37 -参数 : [{}]
+2019-05-07 15:23:37 -耗时 : 9
+2019-05-07 15:23:37 -返回值 : management/profile
+2019-05-07 15:23:44 -请求地址 : http://localhost:8080/management/task
+2019-05-07 15:23:44 -HTTP METHOD : GET
+2019-05-07 15:23:44 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob
+2019-05-07 15:23:44 -参数 : []
+2019-05-07 15:23:44 -耗时 : 7
+2019-05-07 15:23:44 -返回值 : management/task
+2019-05-07 15:23:44 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:23:44 -==> Parameters: null, 2(Long), test(String), 进入任务管理界面(String), 8(Integer), net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 15:23:44.972(Timestamp)
+2019-05-07 15:23:44 -<==    Updates: 1
+2019-05-07 15:23:45 -请求地址 : http://localhost:8080/management/task/list
+2019-05-07 15:23:45 -HTTP METHOD : POST
+2019-05-07 15:23:45 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.list
+2019-05-07 15:23:45 -参数 : [net.laoyeye.yyblog.model.query.TaskQuery@1ada45c]
+2019-05-07 15:23:45 -==>  Preparing: SELECT count(0) FROM sys_task 
+2019-05-07 15:23:45 -==> Parameters: 
+2019-05-07 15:23:45 -<==      Total: 1
+2019-05-07 15:23:45 -==>  Preparing: select `id`,`job_name`,`description`,`cron_expression`,`bean_class`,`job_status`,`job_group` from sys_task order by id asc LIMIT ? 
+2019-05-07 15:23:45 -==> Parameters: 10(Integer)
+2019-05-07 15:23:45 -<==      Total: 1
+2019-05-07 15:23:45 -耗时 : 12
+2019-05-07 15:23:45 -返回值 : net.laoyeye.yyblog.common.DataGridResult@19cd462
+2019-05-07 15:23:58 -请求地址 : http://localhost:8080/management/log
+2019-05-07 15:23:58 -HTTP METHOD : GET
+2019-05-07 15:23:58 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LogController.logIndex
+2019-05-07 15:23:58 -参数 : []
+2019-05-07 15:23:58 -耗时 : 3
+2019-05-07 15:23:58 -返回值 : management/log
+2019-05-07 15:23:58 -请求地址 : http://localhost:8080/management/log/list
+2019-05-07 15:23:58 -HTTP METHOD : POST
+2019-05-07 15:23:58 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LogController.list
+2019-05-07 15:23:58 -参数 : [net.laoyeye.yyblog.model.query.LogQuery@56fa64]
+2019-05-07 15:23:58 -==>  Preparing: SELECT count(0) FROM sys_log 
+2019-05-07 15:23:58 -==> Parameters: 
+2019-05-07 15:23:58 -<==      Total: 1
+2019-05-07 15:23:58 -==>  Preparing: select id, user_id, username, operation, time, method, params, params2, ip, create_time from sys_log order by create_time desc LIMIT ? 
+2019-05-07 15:23:58 -==> Parameters: 10(Integer)
+2019-05-07 15:23:58 -<==      Total: 10
+2019-05-07 15:23:58 -耗时 : 10
+2019-05-07 15:23:58 -返回值 : net.laoyeye.yyblog.common.DataGridResult@babfcc
+2019-05-07 15:24:02 -请求地址 : http://localhost:8080/management/online
+2019-05-07 15:24:02 -HTTP METHOD : GET
+2019-05-07 15:24:02 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SessionController.online
+2019-05-07 15:24:02 -参数 : []
+2019-05-07 15:24:02 -耗时 : 7
+2019-05-07 15:24:02 -返回值 : management/online
+2019-05-07 15:24:02 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:24:02 -==> Parameters: null, 2(Long), test(String), 在线用户(String), 8(Integer), net.laoyeye.yyblog.web.admin.SessionController.online()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 15:24:02.961(Timestamp)
+2019-05-07 15:24:02 -<==    Updates: 1
+2019-05-07 15:24:02 -请求地址 : http://localhost:8080/management/online/list
+2019-05-07 15:24:02 -HTTP METHOD : POST
+2019-05-07 15:24:02 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SessionController.list
+2019-05-07 15:24:02 -参数 : [1, 10, null]
+2019-05-07 15:24:03 -耗时 : 4
+2019-05-07 15:24:03 -返回值 : net.laoyeye.yyblog.common.DataGridResult@136a843
+2019-05-07 15:24:14 -请求地址 : http://localhost:8080/management/online
+2019-05-07 15:24:14 -HTTP METHOD : GET
+2019-05-07 15:24:14 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SessionController.online
+2019-05-07 15:24:14 -参数 : []
+2019-05-07 15:24:14 -耗时 : 1
+2019-05-07 15:24:14 -返回值 : management/online
+2019-05-07 15:24:14 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:24:14 -==> Parameters: null, 2(Long), test(String), 在线用户(String), 1(Integer), net.laoyeye.yyblog.web.admin.SessionController.online()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 15:24:14.802(Timestamp)
+2019-05-07 15:24:14 -<==    Updates: 1
+2019-05-07 15:24:14 -请求地址 : http://localhost:8080/management/online/list
+2019-05-07 15:24:14 -HTTP METHOD : POST
+2019-05-07 15:24:14 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SessionController.list
+2019-05-07 15:24:14 -参数 : [1, 10, null]
+2019-05-07 15:24:14 -耗时 : 1
+2019-05-07 15:24:14 -返回值 : net.laoyeye.yyblog.common.DataGridResult@8fd4b
+2019-05-07 15:24:17 -请求地址 : http://localhost:8080/management/settings/qrcode
+2019-05-07 15:24:17 -HTTP METHOD : GET
+2019-05-07 15:24:17 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SettingsController.qrcode
+2019-05-07 15:24:17 -参数 : [{}]
+2019-05-07 15:24:17 -==>  Preparing: SELECT VALUE FROM T_SETTING WHERE CODE = ? 
+2019-05-07 15:24:17 -==> Parameters: alipay(String)
+2019-05-07 15:24:17 -<==      Total: 1
+2019-05-07 15:24:17 -==>  Preparing: SELECT VALUE FROM T_SETTING WHERE CODE = ? 
+2019-05-07 15:24:17 -==> Parameters: wechat_pay(String)
+2019-05-07 15:24:17 -<==      Total: 1
+2019-05-07 15:24:17 -耗时 : 15
+2019-05-07 15:24:17 -返回值 : management/qrcode
+2019-05-07 15:24:20 -请求地址 : http://localhost:8080/management/task
+2019-05-07 15:24:20 -HTTP METHOD : GET
+2019-05-07 15:24:20 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob
+2019-05-07 15:24:20 -参数 : []
+2019-05-07 15:24:20 -耗时 : 0
+2019-05-07 15:24:20 -返回值 : management/task
+2019-05-07 15:24:20 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:24:20 -==> Parameters: null, 2(Long), test(String), 进入任务管理界面(String), 1(Integer), net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 15:24:20.269(Timestamp)
+2019-05-07 15:24:20 -<==    Updates: 1
+2019-05-07 15:24:20 -请求地址 : http://localhost:8080/management/task/list
+2019-05-07 15:24:20 -HTTP METHOD : POST
+2019-05-07 15:24:20 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.list
+2019-05-07 15:24:20 -参数 : [net.laoyeye.yyblog.model.query.TaskQuery@1ef6702]
+2019-05-07 15:24:20 -==>  Preparing: SELECT count(0) FROM sys_task 
+2019-05-07 15:24:20 -==> Parameters: 
+2019-05-07 15:24:20 -<==      Total: 1
+2019-05-07 15:24:20 -==>  Preparing: select `id`,`job_name`,`description`,`cron_expression`,`bean_class`,`job_status`,`job_group` from sys_task order by id asc LIMIT ? 
+2019-05-07 15:24:20 -==> Parameters: 10(Integer)
+2019-05-07 15:24:20 -<==      Total: 1
+2019-05-07 15:24:20 -耗时 : 7
+2019-05-07 15:24:20 -返回值 : net.laoyeye.yyblog.common.DataGridResult@f6fcea
+2019-05-07 15:24:29 -==>  Preparing: SELECT ID, CODE, VALUE, REMARK FROM T_SETTING 
+2019-05-07 15:24:29 -==> Parameters: 
+2019-05-07 15:24:29 -<==      Total: 23
+2019-05-07 15:24:29 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE WHERE DRAFT = false 
+2019-05-07 15:24:29 -==> Parameters: 
+2019-05-07 15:24:29 -<==      Total: 1
+2019-05-07 15:24:29 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 15:24:29 -==> Parameters: 
+2019-05-07 15:24:29 -<==      Total: 4
+2019-05-07 15:24:29 -==>  Preparing: select count(0) from (SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:24:29 -==> Parameters: 
+2019-05-07 15:24:29 -<==      Total: 1
+2019-05-07 15:24:29 -==>  Preparing: SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:24:29 -==> Parameters: 10(Integer)
+2019-05-07 15:24:29 -<==      Total: 4
+2019-05-07 15:24:29 -==>  Preparing: SELECT TT.NAME, COUNT(TTR.TAG_ID) AS CNT FROM T_TAG_REFER TTR LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID GROUP BY TTR.TAG_ID ORDER BY CNT DESC LIMIT 30 
+2019-05-07 15:24:29 -==> Parameters: 
+2019-05-07 15:24:29 -<==      Total: 3
+2019-05-07 15:24:29 -==>  Preparing: select count(0) from (SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:24:29 -==> Parameters: 
+2019-05-07 15:24:29 -<==      Total: 1
+2019-05-07 15:24:29 -==>  Preparing: SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:24:29 -==> Parameters: 10(Integer)
+2019-05-07 15:24:29 -<==      Total: 4
+2019-05-07 15:24:29 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:24:29 -==> Parameters: 152933278046718(Long)
+2019-05-07 15:24:29 -<==      Total: 1
+2019-05-07 15:24:29 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:24:29 -==> Parameters: 153215625734689(Long)
+2019-05-07 15:24:29 -<==      Total: 1
+2019-05-07 15:24:29 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:24:29 -==> Parameters: 152776394790103(Long)
+2019-05-07 15:24:29 -<==      Total: 1
+2019-05-07 15:24:29 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:24:29 -==> Parameters: 152759704083198(Long)
+2019-05-07 15:24:29 -<==      Total: 1
+2019-05-07 15:24:32 -请求地址 : http://localhost:8080/management/home
+2019-05-07 15:24:32 -HTTP METHOD : GET
+2019-05-07 15:24:32 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.home
+2019-05-07 15:24:32 -参数 : [{}]
+2019-05-07 15:24:32 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE 
+2019-05-07 15:24:32 -==> Parameters: 
+2019-05-07 15:24:32 -<==      Total: 1
+2019-05-07 15:24:32 -==>  Preparing: SELECT COUNT(*) FROM T_NOTE 
+2019-05-07 15:24:32 -==> Parameters: 
+2019-05-07 15:24:32 -<==      Total: 1
+2019-05-07 15:24:32 -==>  Preparing: SELECT COUNT(*) FROM T_COMMENT 
+2019-05-07 15:24:32 -==> Parameters: 
+2019-05-07 15:24:32 -<==      Total: 1
+2019-05-07 15:24:32 -==>  Preparing: SELECT TITLE, SUMMARY, CREATE_TIME FROM T_ARTICLE WHERE DRAFT = 0 ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 15:24:32 -==> Parameters: 
+2019-05-07 15:24:32 -<==      Total: 1
+2019-05-07 15:24:32 -==>  Preparing: SELECT TITLE, CONTENT, CREATE_TIME FROM T_NOTE ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 15:24:32 -==> Parameters: 
+2019-05-07 15:24:32 -<==      Total: 1
+2019-05-07 15:24:32 -==>  Preparing: SELECT TC.*, SU.NICKNAME, TA.TITLE FROM T_COMMENT TC, SYS_USER SU, T_ARTICLE TA WHERE SU.ID = TC.USER_ID AND TA.ID = TC.ARTICLE_ID ORDER BY TC.CREATE_TIME DESC LIMIT 1 
+2019-05-07 15:24:32 -==> Parameters: 
+2019-05-07 15:24:32 -<==      Total: 1
+2019-05-07 15:24:32 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 15:24:32 -==> Parameters: 
+2019-05-07 15:24:32 -<==      Total: 4
+2019-05-07 15:24:32 -耗时 : 17
+2019-05-07 15:24:32 -返回值 : management/home
+2019-05-07 15:24:37 -==>  Preparing: SELECT ID, CODE, VALUE, REMARK FROM T_SETTING 
+2019-05-07 15:24:37 -==> Parameters: 
+2019-05-07 15:24:37 -<==      Total: 23
+2019-05-07 15:24:37 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE WHERE DRAFT = false 
+2019-05-07 15:24:37 -==> Parameters: 
+2019-05-07 15:24:37 -<==      Total: 1
+2019-05-07 15:24:37 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 15:24:37 -==> Parameters: 
+2019-05-07 15:24:37 -<==      Total: 4
+2019-05-07 15:24:37 -==>  Preparing: select count(0) from (SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:24:37 -==> Parameters: 
+2019-05-07 15:24:37 -<==      Total: 1
+2019-05-07 15:24:37 -==>  Preparing: SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:24:37 -==> Parameters: 10(Integer)
+2019-05-07 15:24:37 -<==      Total: 4
+2019-05-07 15:24:37 -==>  Preparing: SELECT TT.NAME, COUNT(TTR.TAG_ID) AS CNT FROM T_TAG_REFER TTR LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID GROUP BY TTR.TAG_ID ORDER BY CNT DESC LIMIT 30 
+2019-05-07 15:24:37 -==> Parameters: 
+2019-05-07 15:24:37 -<==      Total: 3
+2019-05-07 15:24:37 -==>  Preparing: select count(0) from (SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:24:37 -==> Parameters: 
+2019-05-07 15:24:37 -<==      Total: 1
+2019-05-07 15:24:37 -==>  Preparing: SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:24:37 -==> Parameters: 10(Integer)
+2019-05-07 15:24:37 -<==      Total: 4
+2019-05-07 15:24:37 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:24:37 -==> Parameters: 152933278046718(Long)
+2019-05-07 15:24:37 -<==      Total: 1
+2019-05-07 15:24:37 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:24:37 -==> Parameters: 153215625734689(Long)
+2019-05-07 15:24:37 -<==      Total: 1
+2019-05-07 15:24:37 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:24:37 -==> Parameters: 152776394790103(Long)
+2019-05-07 15:24:37 -<==      Total: 1
+2019-05-07 15:24:37 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:24:37 -==> Parameters: 152759704083198(Long)
+2019-05-07 15:24:37 -<==      Total: 1
+2019-05-07 15:24:45 -请求地址 : http://localhost:8080/management/log
+2019-05-07 15:24:45 -HTTP METHOD : GET
+2019-05-07 15:24:45 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LogController.logIndex
+2019-05-07 15:24:45 -参数 : []
+2019-05-07 15:24:45 -耗时 : 1
+2019-05-07 15:24:45 -返回值 : management/log
+2019-05-07 15:24:45 -请求地址 : http://localhost:8080/management/log/list
+2019-05-07 15:24:45 -HTTP METHOD : POST
+2019-05-07 15:24:45 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LogController.list
+2019-05-07 15:24:45 -参数 : [net.laoyeye.yyblog.model.query.LogQuery@a35254]
+2019-05-07 15:24:45 -==>  Preparing: SELECT count(0) FROM sys_log 
+2019-05-07 15:24:45 -==> Parameters: 
+2019-05-07 15:24:45 -<==      Total: 1
+2019-05-07 15:24:45 -==>  Preparing: select id, user_id, username, operation, time, method, params, params2, ip, create_time from sys_log order by create_time desc LIMIT ? 
+2019-05-07 15:24:45 -==> Parameters: 10(Integer)
+2019-05-07 15:24:45 -<==      Total: 10
+2019-05-07 15:24:45 -耗时 : 19
+2019-05-07 15:24:45 -返回值 : net.laoyeye.yyblog.common.DataGridResult@b98ec3
+2019-05-07 15:24:46 -请求地址 : http://localhost:8080/management/online
+2019-05-07 15:24:46 -HTTP METHOD : GET
+2019-05-07 15:24:46 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SessionController.online
+2019-05-07 15:24:46 -参数 : []
+2019-05-07 15:24:46 -耗时 : 1
+2019-05-07 15:24:46 -返回值 : management/online
+2019-05-07 15:24:46 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:24:46 -==> Parameters: null, 2(Long), test(String), 在线用户(String), 1(Integer), net.laoyeye.yyblog.web.admin.SessionController.online()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 15:24:46.797(Timestamp)
+2019-05-07 15:24:46 -<==    Updates: 1
+2019-05-07 15:24:46 -请求地址 : http://localhost:8080/management/online/list
+2019-05-07 15:24:46 -HTTP METHOD : POST
+2019-05-07 15:24:46 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SessionController.list
+2019-05-07 15:24:46 -参数 : [1, 10, null]
+2019-05-07 15:24:46 -耗时 : 0
+2019-05-07 15:24:46 -返回值 : net.laoyeye.yyblog.common.DataGridResult@1e5b4f1
+2019-05-07 15:24:54 -请求地址 : http://localhost:8080/management/task
+2019-05-07 15:24:54 -HTTP METHOD : GET
+2019-05-07 15:24:54 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob
+2019-05-07 15:24:54 -参数 : []
+2019-05-07 15:24:54 -耗时 : 2
+2019-05-07 15:24:54 -返回值 : management/task
+2019-05-07 15:24:54 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:24:54 -==> Parameters: null, 2(Long), test(String), 进入任务管理界面(String), 2(Integer), net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 15:24:54.613(Timestamp)
+2019-05-07 15:24:54 -<==    Updates: 1
+2019-05-07 15:24:54 -请求地址 : http://localhost:8080/management/task/list
+2019-05-07 15:24:54 -HTTP METHOD : POST
+2019-05-07 15:24:54 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.list
+2019-05-07 15:24:54 -参数 : [net.laoyeye.yyblog.model.query.TaskQuery@d1067f]
+2019-05-07 15:24:54 -==>  Preparing: SELECT count(0) FROM sys_task 
+2019-05-07 15:24:54 -==> Parameters: 
+2019-05-07 15:24:54 -<==      Total: 1
+2019-05-07 15:24:54 -==>  Preparing: select `id`,`job_name`,`description`,`cron_expression`,`bean_class`,`job_status`,`job_group` from sys_task order by id asc LIMIT ? 
+2019-05-07 15:24:54 -==> Parameters: 10(Integer)
+2019-05-07 15:24:54 -<==      Total: 1
+2019-05-07 15:24:54 -耗时 : 9
+2019-05-07 15:24:54 -返回值 : net.laoyeye.yyblog.common.DataGridResult@7955aa
+2019-05-07 15:37:19 -请求地址 : http://localhost:8080/management/task/add
+2019-05-07 15:37:19 -HTTP METHOD : GET
+2019-05-07 15:37:19 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskAddScheduleJob
+2019-05-07 15:37:19 -参数 : []
+2019-05-07 15:37:19 -耗时 : 1
+2019-05-07 15:37:19 -返回值 : management/task_add
+2019-05-07 15:39:25 -==>  Preparing: SELECT DISTINCT sm.perms FROM sys_menu sm LEFT JOIN sys_role_menu srm ON sm.menu_id = srm.menu_id LEFT JOIN sys_user_role sur ON srm.role_id = sur.role_id WHERE sur.user_id = ? 
+2019-05-07 15:39:25 -==> Parameters: 2(Long)
+2019-05-07 15:39:25 -<==      Total: 12
+2019-05-07 15:39:25 -Subject does not have permission [sys:task:update]
+org.apache.shiro.authz.UnauthorizedException: Subject does not have permission [sys:task:update]
+	at org.apache.shiro.authz.ModularRealmAuthorizer.checkPermission(ModularRealmAuthorizer.java:323)
+	at org.apache.shiro.mgt.AuthorizingSecurityManager.checkPermission(AuthorizingSecurityManager.java:137)
+	at org.apache.shiro.subject.support.DelegatingSubject.checkPermission(DelegatingSubject.java:205)
+	at org.apache.shiro.authz.aop.PermissionAnnotationHandler.assertAuthorized(PermissionAnnotationHandler.java:74)
+	at org.apache.shiro.authz.aop.AuthorizingAnnotationMethodInterceptor.assertAuthorized(AuthorizingAnnotationMethodInterceptor.java:84)
+	at org.apache.shiro.authz.aop.AnnotationsAuthorizingMethodInterceptor.assertAuthorized(AnnotationsAuthorizingMethodInterceptor.java:100)
+	at org.apache.shiro.authz.aop.AuthorizingMethodInterceptor.invoke(AuthorizingMethodInterceptor.java:38)
+	at org.apache.shiro.spring.security.interceptor.AopAllianceAnnotationsAuthorizingMethodInterceptor.invoke(AopAllianceAnnotationsAuthorizingMethodInterceptor.java:115)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at net.laoyeye.yyblog.web.admin.TaskController$$EnhancerBySpringCGLIB$$630266e3.changeStatus(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.shiro.authz.AuthorizationException: Not authorized to invoke method: public net.laoyeye.yyblog.common.YYBlogResult net.laoyeye.yyblog.web.admin.TaskController.changeStatus(java.lang.Long,java.lang.Boolean)
+	at org.apache.shiro.authz.aop.AuthorizingAnnotationMethodInterceptor.assertAuthorized(AuthorizingAnnotationMethodInterceptor.java:90)
+	... 62 common frames omitted
+2019-05-07 15:41:12 -请求地址 : http://localhost:8080/management/logout
+2019-05-07 15:41:12 -HTTP METHOD : GET
+2019-05-07 15:41:12 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.logout
+2019-05-07 15:41:12 -参数 : [management]
+2019-05-07 15:41:12 -耗时 : 2
+2019-05-07 15:41:12 -返回值 : redirect:/management/index
+2019-05-07 15:41:12 -请求地址 : http://localhost:8080/login;JSESSIONID=7558f2a0-c6de-48e1-8370-abacd252199e
+2019-05-07 15:41:12 -HTTP METHOD : GET
+2019-05-07 15:41:12 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LoginController.login
+2019-05-07 15:41:12 -参数 : []
+2019-05-07 15:41:12 -耗时 : 2
+2019-05-07 15:41:12 -返回值 : management/login
+2019-05-07 15:41:16 -请求地址 : http://localhost:8080/login
+2019-05-07 15:41:16 -HTTP METHOD : POST
+2019-05-07 15:41:16 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LoginController.login
+2019-05-07 15:41:16 -参数 : [admin, e10adc3949ba59abbe56e057f20f883e, true]
+2019-05-07 15:41:16 -==>  Preparing: SELECT ID, USERNAME, NICKNAME, PASSWORD, AVATAR, EMAIL, ENABLE, OPEN_ID, WX_OPEN_ID, CREATE_TIME, UPDATE_TIME FROM SYS_USER WHERE USERNAME = ? AND ENABLE = true 
+2019-05-07 15:41:16 -==> Parameters: admin(String)
+2019-05-07 15:41:16 -<==      Total: 1
+2019-05-07 15:41:16 -耗时 : 71
+2019-05-07 15:41:16 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@133a6f2
+2019-05-07 15:41:16 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:41:16 -==> Parameters: null, 152336334290854(Long), admin(String), 登陆验证(String), 72(Integer), net.laoyeye.yyblog.web.admin.LoginController.login()(String), [admin, e10adc3949ba59abbe56e057f20f883e, true](String), "admin"(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:41:16.993(Timestamp)
+2019-05-07 15:41:16 -<==    Updates: 1
+2019-05-07 15:41:18 -==>  Preparing: SELECT DISTINCT sm.perms FROM sys_menu sm LEFT JOIN sys_role_menu srm ON sm.menu_id = srm.menu_id LEFT JOIN sys_user_role sur ON srm.role_id = sur.role_id WHERE sur.user_id = ? 
+2019-05-07 15:41:18 -==> Parameters: 152336334290854(Long)
+2019-05-07 15:41:18 -<==      Total: 36
+2019-05-07 15:41:18 -请求地址 : http://localhost:8080/management/index
+2019-05-07 15:41:18 -HTTP METHOD : GET
+2019-05-07 15:41:18 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.index
+2019-05-07 15:41:18 -参数 : [{}]
+2019-05-07 15:41:18 -耗时 : 1
+2019-05-07 15:41:18 -返回值 : management/index
+2019-05-07 15:41:18 -请求地址 : http://localhost:8080/management/home
+2019-05-07 15:41:18 -HTTP METHOD : GET
+2019-05-07 15:41:18 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.home
+2019-05-07 15:41:18 -参数 : [{}]
+2019-05-07 15:41:18 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE 
+2019-05-07 15:41:18 -==> Parameters: 
+2019-05-07 15:41:18 -<==      Total: 1
+2019-05-07 15:41:18 -==>  Preparing: SELECT COUNT(*) FROM T_NOTE 
+2019-05-07 15:41:18 -==> Parameters: 
+2019-05-07 15:41:18 -<==      Total: 1
+2019-05-07 15:41:18 -==>  Preparing: SELECT COUNT(*) FROM T_COMMENT 
+2019-05-07 15:41:18 -==> Parameters: 
+2019-05-07 15:41:18 -<==      Total: 1
+2019-05-07 15:41:18 -==>  Preparing: SELECT TITLE, SUMMARY, CREATE_TIME FROM T_ARTICLE WHERE DRAFT = 0 ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 15:41:18 -==> Parameters: 
+2019-05-07 15:41:18 -<==      Total: 1
+2019-05-07 15:41:18 -==>  Preparing: SELECT TITLE, CONTENT, CREATE_TIME FROM T_NOTE ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 15:41:18 -==> Parameters: 
+2019-05-07 15:41:18 -<==      Total: 1
+2019-05-07 15:41:18 -==>  Preparing: SELECT TC.*, SU.NICKNAME, TA.TITLE FROM T_COMMENT TC, SYS_USER SU, T_ARTICLE TA WHERE SU.ID = TC.USER_ID AND TA.ID = TC.ARTICLE_ID ORDER BY TC.CREATE_TIME DESC LIMIT 1 
+2019-05-07 15:41:18 -==> Parameters: 
+2019-05-07 15:41:18 -<==      Total: 1
+2019-05-07 15:41:18 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 15:41:18 -==> Parameters: 
+2019-05-07 15:41:18 -<==      Total: 4
+2019-05-07 15:41:18 -耗时 : 32
+2019-05-07 15:41:18 -返回值 : management/home
+2019-05-07 15:41:21 -请求地址 : http://localhost:8080/management/user
+2019-05-07 15:41:21 -HTTP METHOD : GET
+2019-05-07 15:41:21 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.UserController.index
+2019-05-07 15:41:21 -参数 : []
+2019-05-07 15:41:21 -耗时 : 10
+2019-05-07 15:41:21 -返回值 : management/users
+2019-05-07 15:41:21 -请求地址 : http://localhost:8080/management/user/list
+2019-05-07 15:41:21 -HTTP METHOD : GET
+2019-05-07 15:41:21 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.UserController.list
+2019-05-07 15:41:21 -参数 : [net.laoyeye.yyblog.model.query.UserQuery@86975e]
+2019-05-07 15:41:21 -==>  Preparing: select count(0) from (SELECT ID, USERNAME, NICKNAME, PASSWORD, AVATAR, EMAIL, ENABLE, OPEN_ID, WX_OPEN_ID, CREATE_TIME, UPDATE_TIME FROM SYS_USER ORDER BY CREATE_TIME) tmp_count 
+2019-05-07 15:41:21 -==> Parameters: 
+2019-05-07 15:41:21 -<==      Total: 1
+2019-05-07 15:41:21 -==>  Preparing: SELECT ID, USERNAME, NICKNAME, PASSWORD, AVATAR, EMAIL, ENABLE, OPEN_ID, WX_OPEN_ID, CREATE_TIME, UPDATE_TIME FROM SYS_USER ORDER BY CREATE_TIME LIMIT ? 
+2019-05-07 15:41:21 -==> Parameters: 10(Integer)
+2019-05-07 15:41:21 -<==      Total: 2
+2019-05-07 15:41:21 -耗时 : 6
+2019-05-07 15:41:21 -返回值 : net.laoyeye.yyblog.common.DataGridResult@81fb66
+2019-05-07 15:41:24 -请求地址 : http://localhost:8080/management/message
+2019-05-07 15:41:24 -HTTP METHOD : GET
+2019-05-07 15:41:24 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.MessageController.index
+2019-05-07 15:41:24 -参数 : []
+2019-05-07 15:41:24 -耗时 : 13
+2019-05-07 15:41:24 -返回值 : management/message
+2019-05-07 15:41:25 -请求地址 : http://localhost:8080/management/comment
+2019-05-07 15:41:25 -HTTP METHOD : GET
+2019-05-07 15:41:25 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.CommentController.index
+2019-05-07 15:41:25 -参数 : []
+2019-05-07 15:41:25 -耗时 : 6
+2019-05-07 15:41:25 -返回值 : management/comment
+2019-05-07 15:41:31 -请求地址 : http://localhost:8080/management/user
+2019-05-07 15:41:31 -HTTP METHOD : GET
+2019-05-07 15:41:31 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.UserController.index
+2019-05-07 15:41:31 -参数 : []
+2019-05-07 15:41:31 -耗时 : 0
+2019-05-07 15:41:31 -返回值 : management/users
+2019-05-07 15:41:31 -请求地址 : http://localhost:8080/management/user/list
+2019-05-07 15:41:31 -HTTP METHOD : GET
+2019-05-07 15:41:31 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.UserController.list
+2019-05-07 15:41:31 -参数 : [net.laoyeye.yyblog.model.query.UserQuery@6b48fe]
+2019-05-07 15:41:31 -==>  Preparing: select count(0) from (SELECT ID, USERNAME, NICKNAME, PASSWORD, AVATAR, EMAIL, ENABLE, OPEN_ID, WX_OPEN_ID, CREATE_TIME, UPDATE_TIME FROM SYS_USER ORDER BY CREATE_TIME) tmp_count 
+2019-05-07 15:41:31 -==> Parameters: 
+2019-05-07 15:41:31 -<==      Total: 1
+2019-05-07 15:41:31 -==>  Preparing: SELECT ID, USERNAME, NICKNAME, PASSWORD, AVATAR, EMAIL, ENABLE, OPEN_ID, WX_OPEN_ID, CREATE_TIME, UPDATE_TIME FROM SYS_USER ORDER BY CREATE_TIME LIMIT ? 
+2019-05-07 15:41:31 -==> Parameters: 10(Integer)
+2019-05-07 15:41:31 -<==      Total: 2
+2019-05-07 15:41:31 -耗时 : 5
+2019-05-07 15:41:31 -返回值 : net.laoyeye.yyblog.common.DataGridResult@ffc59f
+2019-05-07 15:41:34 -请求地址 : http://localhost:8080/management/task
+2019-05-07 15:41:34 -HTTP METHOD : GET
+2019-05-07 15:41:34 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob
+2019-05-07 15:41:34 -参数 : []
+2019-05-07 15:41:34 -耗时 : 0
+2019-05-07 15:41:34 -返回值 : management/task
+2019-05-07 15:41:34 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:41:34 -==> Parameters: null, 152336334290854(Long), admin(String), 进入任务管理界面(String), 1(Integer), net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 15:41:34.721(Timestamp)
+2019-05-07 15:41:34 -<==    Updates: 1
+2019-05-07 15:41:34 -请求地址 : http://localhost:8080/management/task/list
+2019-05-07 15:41:34 -HTTP METHOD : POST
+2019-05-07 15:41:34 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.list
+2019-05-07 15:41:34 -参数 : [net.laoyeye.yyblog.model.query.TaskQuery@16599ad]
+2019-05-07 15:41:34 -==>  Preparing: SELECT count(0) FROM sys_task 
+2019-05-07 15:41:34 -==> Parameters: 
+2019-05-07 15:41:34 -<==      Total: 1
+2019-05-07 15:41:34 -==>  Preparing: select `id`,`job_name`,`description`,`cron_expression`,`bean_class`,`job_status`,`job_group` from sys_task order by id asc LIMIT ? 
+2019-05-07 15:41:34 -==> Parameters: 10(Integer)
+2019-05-07 15:41:34 -<==      Total: 1
+2019-05-07 15:41:34 -耗时 : 13
+2019-05-07 15:41:34 -返回值 : net.laoyeye.yyblog.common.DataGridResult@48ed23
+2019-05-07 15:41:36 -请求地址 : http://localhost:8080/management/task/changeStatus/27
+2019-05-07 15:41:36 -HTTP METHOD : POST
+2019-05-07 15:41:36 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 15:41:36 -参数 : [27, true]
+2019-05-07 15:41:36 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 15:41:36 -==> Parameters: 27(Long)
+2019-05-07 15:41:36 -<==      Total: 1
+2019-05-07 15:41:36 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 15:41:36 -==> Parameters: helloword(String), 跑批配置测试(String), 0/10 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 1(String), group(String), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), 27(Long)
+2019-05-07 15:41:36 -<==    Updates: 1
+2019-05-07 15:41:36 -耗时 : 55
+2019-05-07 15:41:36 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1c08d4c
+2019-05-07 15:41:36 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:41:36 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 55(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [27, true](String), 27(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:41:36.469(Timestamp)
+2019-05-07 15:41:36 -<==    Updates: 1
+2019-05-07 15:42:14 -请求地址 : http://localhost:8080/management/task/changeStatus/27
+2019-05-07 15:42:14 -HTTP METHOD : POST
+2019-05-07 15:42:14 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 15:42:14 -参数 : [27, false]
+2019-05-07 15:42:14 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 15:42:14 -==> Parameters: 27(Long)
+2019-05-07 15:42:14 -<==      Total: 1
+2019-05-07 15:42:14 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 15:42:14 -==> Parameters: helloword(String), 跑批配置测试(String), 0/10 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 0(String), group(String), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), 27(Long)
+2019-05-07 15:42:14 -<==    Updates: 1
+2019-05-07 15:42:14 -耗时 : 4
+2019-05-07 15:42:14 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@cb5866
+2019-05-07 15:42:14 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:42:14 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 4(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [27, false](String), 27(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:42:14.584(Timestamp)
+2019-05-07 15:42:14 -<==    Updates: 1
+2019-05-07 15:42:29 -请求地址 : http://localhost:8080/login;JSESSIONID=d789cbc9-7733-4e74-a533-b4d76051c710
+2019-05-07 15:42:29 -HTTP METHOD : GET
+2019-05-07 15:42:29 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LoginController.login
+2019-05-07 15:42:29 -参数 : []
+2019-05-07 15:42:29 -耗时 : 2
+2019-05-07 15:42:29 -返回值 : management/login
+2019-05-07 15:43:52 -请求地址 : http://localhost:8080/management/task/add
+2019-05-07 15:43:52 -HTTP METHOD : GET
+2019-05-07 15:43:52 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskAddScheduleJob
+2019-05-07 15:43:52 -参数 : []
+2019-05-07 15:43:52 -耗时 : 0
+2019-05-07 15:43:52 -返回值 : management/task_add
+2019-05-07 15:44:50 -请求地址 : http://localhost:8080/management/task/add
+2019-05-07 15:44:50 -HTTP METHOD : GET
+2019-05-07 15:44:50 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskAddScheduleJob
+2019-05-07 15:44:50 -参数 : []
+2019-05-07 15:44:50 -耗时 : 1
+2019-05-07 15:44:50 -返回值 : management/task_add
+2019-05-07 15:45:45 -请求地址 : http://localhost:8080/management/task/save
+2019-05-07 15:45:45 -HTTP METHOD : POST
+2019-05-07 15:45:45 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.save
+2019-05-07 15:45:45 -参数 : [net.laoyeye.yyblog.model.TaskDO@11b0c24]
+2019-05-07 15:45:45 -==>  Preparing: insert into sys_task (id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:45:45 -==> Parameters: null, 测试任务(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.TestJob(String), 0(String), 新增任务1(String), admin(String), 2019-05-07 15:45:45.592(Timestamp), admin(String), 2019-05-07 15:45:45.592(Timestamp)
+2019-05-07 15:45:45 -<==    Updates: 1
+2019-05-07 15:45:45 -耗时 : 5
+2019-05-07 15:45:45 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1483f80
+2019-05-07 15:45:45 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:45:45 -==> Parameters: null, 152336334290854(Long), admin(String), 新增任务(String), 5(Integer), net.laoyeye.yyblog.web.admin.TaskController.save()(String), [net.laoyeye.yyblog.model.TaskDO@11b0c24](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.TestJob","createTime":1557215145592,"createUser":"admin","cronExpression":"0/5 * * * * ?","description":"测试新增任务","jobGroup":"新增任务1","jobName":"测试任务","jobStatus":"0","updateTime":1557215145592,"updateUser":"admin"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:45:45.627(Timestamp)
+2019-05-07 15:45:45 -<==    Updates: 1
+2019-05-07 15:45:45 -请求地址 : http://localhost:8080/management/task/list
+2019-05-07 15:45:45 -HTTP METHOD : POST
+2019-05-07 15:45:45 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.list
+2019-05-07 15:45:45 -参数 : [net.laoyeye.yyblog.model.query.TaskQuery@1a3a276]
+2019-05-07 15:45:45 -==>  Preparing: SELECT count(0) FROM sys_task 
+2019-05-07 15:45:45 -==> Parameters: 
+2019-05-07 15:45:45 -<==      Total: 1
+2019-05-07 15:45:45 -==>  Preparing: select `id`,`job_name`,`description`,`cron_expression`,`bean_class`,`job_status`,`job_group` from sys_task order by id asc LIMIT ? 
+2019-05-07 15:45:45 -==> Parameters: 10(Integer)
+2019-05-07 15:45:45 -<==      Total: 2
+2019-05-07 15:45:45 -耗时 : 7
+2019-05-07 15:45:45 -返回值 : net.laoyeye.yyblog.common.DataGridResult@42b674
+2019-05-07 15:46:13 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 15:46:13 -HTTP METHOD : POST
+2019-05-07 15:46:13 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 15:46:13 -参数 : [32, true]
+2019-05-07 15:46:13 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 15:46:13 -==> Parameters: 32(Long)
+2019-05-07 15:46:13 -<==      Total: 1
+2019-05-07 15:46:13 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 15:46:13 -==> Parameters: 测试任务(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.TestJob(String), 1(String), 新增任务1(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 15:46:13 -<==    Updates: 1
+2019-05-07 15:46:13 -耗时 : 15
+2019-05-07 15:46:13 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1dec80
+2019-05-07 15:46:13 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:46:13 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 15(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, true](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:46:13.192(Timestamp)
+2019-05-07 15:46:13 -<==    Updates: 1
+2019-05-07 15:46:55 -请求地址 : http://localhost:8080/management/task/remove/32
+2019-05-07 15:46:55 -HTTP METHOD : POST
+2019-05-07 15:46:55 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.remove
+2019-05-07 15:46:55 -参数 : [32]
+2019-05-07 15:46:55 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 15:46:55 -==> Parameters: 32(Long)
+2019-05-07 15:46:55 -<==      Total: 1
+2019-05-07 15:46:55 -耗时 : 2
+2019-05-07 15:46:55 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@10bec13
+2019-05-07 15:46:55 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:46:55 -==> Parameters: null, 152336334290854(Long), admin(String), 删除任务(String), 2(Integer), net.laoyeye.yyblog.web.admin.TaskController.remove()(String), [32](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:46:55.495(Timestamp)
+2019-05-07 15:46:55 -<==    Updates: 1
+2019-05-07 15:46:57 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 15:46:57 -HTTP METHOD : POST
+2019-05-07 15:46:57 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 15:46:57 -参数 : [32, false]
+2019-05-07 15:46:57 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 15:46:57 -==> Parameters: 32(Long)
+2019-05-07 15:46:57 -<==      Total: 1
+2019-05-07 15:46:57 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 15:46:57 -==> Parameters: 测试任务(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.TestJob(String), 0(String), 新增任务1(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 15:46:57 -<==    Updates: 1
+2019-05-07 15:46:57 -耗时 : 8
+2019-05-07 15:46:57 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@120779c
+2019-05-07 15:46:57 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:46:57 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 9(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, false](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:46:57.795(Timestamp)
+2019-05-07 15:46:57 -<==    Updates: 1
+2019-05-07 15:49:44 -请求地址 : http://localhost:8080/management/log
+2019-05-07 15:49:44 -HTTP METHOD : GET
+2019-05-07 15:49:44 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LogController.logIndex
+2019-05-07 15:49:44 -参数 : []
+2019-05-07 15:49:44 -耗时 : 1
+2019-05-07 15:49:44 -返回值 : management/log
+2019-05-07 15:49:44 -请求地址 : http://localhost:8080/management/log/list
+2019-05-07 15:49:44 -HTTP METHOD : POST
+2019-05-07 15:49:44 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.LogController.list
+2019-05-07 15:49:44 -参数 : [net.laoyeye.yyblog.model.query.LogQuery@17e56d3]
+2019-05-07 15:49:44 -==>  Preparing: SELECT count(0) FROM sys_log 
+2019-05-07 15:49:44 -==> Parameters: 
+2019-05-07 15:49:44 -<==      Total: 1
+2019-05-07 15:49:44 -==>  Preparing: select id, user_id, username, operation, time, method, params, params2, ip, create_time from sys_log order by create_time desc LIMIT ? 
+2019-05-07 15:49:44 -==> Parameters: 10(Integer)
+2019-05-07 15:49:44 -<==      Total: 10
+2019-05-07 15:49:44 -耗时 : 13
+2019-05-07 15:49:44 -返回值 : net.laoyeye.yyblog.common.DataGridResult@1d4b91c
+2019-05-07 15:49:45 -请求地址 : http://localhost:8080/management/online
+2019-05-07 15:49:45 -HTTP METHOD : GET
+2019-05-07 15:49:45 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SessionController.online
+2019-05-07 15:49:45 -参数 : []
+2019-05-07 15:49:45 -耗时 : 1
+2019-05-07 15:49:45 -返回值 : management/online
+2019-05-07 15:49:45 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:49:45 -==> Parameters: null, 152336334290854(Long), admin(String), 在线用户(String), 1(Integer), net.laoyeye.yyblog.web.admin.SessionController.online()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 15:49:45.576(Timestamp)
+2019-05-07 15:49:45 -<==    Updates: 1
+2019-05-07 15:49:45 -请求地址 : http://localhost:8080/management/online/list
+2019-05-07 15:49:45 -HTTP METHOD : POST
+2019-05-07 15:49:45 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SessionController.list
+2019-05-07 15:49:45 -参数 : [1, 10, null]
+2019-05-07 15:49:45 -耗时 : 1
+2019-05-07 15:49:45 -返回值 : net.laoyeye.yyblog.common.DataGridResult@3921ce
+2019-05-07 15:50:00 -请求地址 : http://localhost:8080/management/settings
+2019-05-07 15:50:00 -HTTP METHOD : GET
+2019-05-07 15:50:00 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.SettingsController.index
+2019-05-07 15:50:00 -参数 : [{}]
+2019-05-07 15:50:00 -==>  Preparing: SELECT ID, CODE, VALUE, REMARK FROM T_SETTING 
+2019-05-07 15:50:00 -==> Parameters: 
+2019-05-07 15:50:00 -<==      Total: 23
+2019-05-07 15:50:00 -耗时 : 8
+2019-05-07 15:50:00 -返回值 : management/settings
+2019-05-07 15:50:18 -请求地址 : http://localhost:8080/management/profile
+2019-05-07 15:50:18 -HTTP METHOD : GET
+2019-05-07 15:50:18 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.ProfileController.index
+2019-05-07 15:50:18 -参数 : [{}]
+2019-05-07 15:50:18 -耗时 : 1
+2019-05-07 15:50:18 -返回值 : management/profile
+2019-05-07 15:50:31 -==>  Preparing: SELECT ID, CODE, VALUE, REMARK FROM T_SETTING 
+2019-05-07 15:50:31 -==> Parameters: 
+2019-05-07 15:50:31 -<==      Total: 23
+2019-05-07 15:50:31 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE WHERE DRAFT = false 
+2019-05-07 15:50:31 -==> Parameters: 
+2019-05-07 15:50:31 -<==      Total: 1
+2019-05-07 15:50:31 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 15:50:31 -==> Parameters: 
+2019-05-07 15:50:31 -<==      Total: 4
+2019-05-07 15:50:31 -==>  Preparing: select count(0) from (SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:50:31 -==> Parameters: 
+2019-05-07 15:50:31 -<==      Total: 1
+2019-05-07 15:50:31 -==>  Preparing: SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:50:31 -==> Parameters: 10(Integer)
+2019-05-07 15:50:31 -<==      Total: 4
+2019-05-07 15:50:31 -==>  Preparing: SELECT TT.NAME, COUNT(TTR.TAG_ID) AS CNT FROM T_TAG_REFER TTR LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID GROUP BY TTR.TAG_ID ORDER BY CNT DESC LIMIT 30 
+2019-05-07 15:50:31 -==> Parameters: 
+2019-05-07 15:50:31 -<==      Total: 3
+2019-05-07 15:50:32 -==>  Preparing: select count(0) from (SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 15:50:32 -==> Parameters: 
+2019-05-07 15:50:32 -<==      Total: 1
+2019-05-07 15:50:32 -==>  Preparing: SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 15:50:32 -==> Parameters: 10(Integer)
+2019-05-07 15:50:32 -<==      Total: 4
+2019-05-07 15:50:32 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:50:32 -==> Parameters: 152933278046718(Long)
+2019-05-07 15:50:32 -<==      Total: 1
+2019-05-07 15:50:32 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:50:32 -==> Parameters: 153215625734689(Long)
+2019-05-07 15:50:32 -<==      Total: 1
+2019-05-07 15:50:32 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:50:32 -==> Parameters: 152776394790103(Long)
+2019-05-07 15:50:32 -<==      Total: 1
+2019-05-07 15:50:32 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 15:50:32 -==> Parameters: 152759704083198(Long)
+2019-05-07 15:50:32 -<==      Total: 1
+2019-05-07 15:52:29 -==>  Preparing: SELECT DISTINCT sm.perms FROM sys_menu sm LEFT JOIN sys_role_menu srm ON sm.menu_id = srm.menu_id LEFT JOIN sys_user_role sur ON srm.role_id = sur.role_id WHERE sur.user_id = ? 
+2019-05-07 15:52:29 -==> Parameters: 152336334290854(Long)
+2019-05-07 15:52:29 -<==      Total: 36
+2019-05-07 15:52:29 -请求地址 : http://localhost:8080/management/task
+2019-05-07 15:52:29 -HTTP METHOD : GET
+2019-05-07 15:52:29 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob
+2019-05-07 15:52:29 -参数 : []
+2019-05-07 15:52:29 -耗时 : 2
+2019-05-07 15:52:29 -返回值 : management/task
+2019-05-07 15:52:29 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:52:29 -==> Parameters: null, 152336334290854(Long), admin(String), 进入任务管理界面(String), 2(Integer), net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 15:52:29.677(Timestamp)
+2019-05-07 15:52:29 -<==    Updates: 1
+2019-05-07 15:52:29 -请求地址 : http://localhost:8080/management/task/list
+2019-05-07 15:52:29 -HTTP METHOD : POST
+2019-05-07 15:52:29 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.list
+2019-05-07 15:52:29 -参数 : [net.laoyeye.yyblog.model.query.TaskQuery@13d6702]
+2019-05-07 15:52:29 -==>  Preparing: SELECT count(0) FROM sys_task 
+2019-05-07 15:52:29 -==> Parameters: 
+2019-05-07 15:52:29 -<==      Total: 1
+2019-05-07 15:52:29 -==>  Preparing: select `id`,`job_name`,`description`,`cron_expression`,`bean_class`,`job_status`,`job_group` from sys_task order by id asc LIMIT ? 
+2019-05-07 15:52:29 -==> Parameters: 10(Integer)
+2019-05-07 15:52:29 -<==      Total: 2
+2019-05-07 15:52:29 -耗时 : 4
+2019-05-07 15:52:29 -返回值 : net.laoyeye.yyblog.common.DataGridResult@1d7d722
+2019-05-07 15:52:35 -请求地址 : http://localhost:8080/management/task/edit
+2019-05-07 15:52:35 -HTTP METHOD : POST
+2019-05-07 15:52:35 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.edit
+2019-05-07 15:52:35 -参数 : [net.laoyeye.yyblog.model.TaskDO@1d0c679]
+2019-05-07 15:52:35 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 15:52:35 -==> Parameters: 32(Long)
+2019-05-07 15:52:35 -<==      Total: 1
+2019-05-07 15:52:35 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ? where id = ? 
+2019-05-07 15:52:35 -==> Parameters: 测试任务(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 0(String), 新增任务1(String), 32(Long)
+2019-05-07 15:52:35 -<==    Updates: 1
+2019-05-07 15:52:35 -耗时 : 7
+2019-05-07 15:52:35 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@13f3c22
+2019-05-07 15:52:35 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:52:35 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务(String), 7(Integer), net.laoyeye.yyblog.web.admin.TaskController.edit()(String), [net.laoyeye.yyblog.model.TaskDO@1d0c679](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.HelloWorldJob","cronExpression":"0/5 * * * * ?","description":"测试新增任务","id":32,"jobGroup":"新增任务1","jobName":"测试任务","jobStatus":"0"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:52:35.798(Timestamp)
+2019-05-07 15:52:35 -<==    Updates: 1
+2019-05-07 15:52:47 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 15:52:47 -HTTP METHOD : POST
+2019-05-07 15:52:47 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 15:52:47 -参数 : [32, true]
+2019-05-07 15:52:47 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 15:52:47 -==> Parameters: 32(Long)
+2019-05-07 15:52:47 -<==      Total: 1
+2019-05-07 15:52:47 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 15:52:47 -==> Parameters: 测试任务(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 1(String), 新增任务1(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 15:52:47 -<==    Updates: 1
+2019-05-07 15:52:47 -耗时 : 9
+2019-05-07 15:52:47 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@130efba
+2019-05-07 15:52:47 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:52:47 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 10(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, true](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:52:47.411(Timestamp)
+2019-05-07 15:52:47 -<==    Updates: 1
+2019-05-07 15:53:14 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 15:53:14 -HTTP METHOD : POST
+2019-05-07 15:53:14 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 15:53:14 -参数 : [32, false]
+2019-05-07 15:53:14 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 15:53:14 -==> Parameters: 32(Long)
+2019-05-07 15:53:14 -<==      Total: 1
+2019-05-07 15:53:14 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 15:53:14 -==> Parameters: 测试任务(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 0(String), 新增任务1(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 15:53:14 -<==    Updates: 1
+2019-05-07 15:53:14 -耗时 : 10
+2019-05-07 15:53:14 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@17f85d2
+2019-05-07 15:53:14 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 15:53:14 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 11(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, false](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 15:53:14.021(Timestamp)
+2019-05-07 15:53:14 -<==    Updates: 1
+2019-05-07 15:55:23 -Starting AppStart on ycya-PC with PID 10408 (D:\XSRT\yyblog-master\yyblog-master\target\classes started by ycya in D:\XSRT\yyblog-master\yyblog-master)
+2019-05-07 15:55:23 -Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+2019-05-07 15:55:23 -No active profile set, falling back to default profiles: default
+2019-05-07 15:55:27 -ApplicationContext registed-->org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fb6037: startup date [Tue May 07 15:55:24 CST 2019]; root of context hierarchy
+2019-05-07 15:55:30 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task order by id asc 
+2019-05-07 15:55:30 -==> Parameters: 
+2019-05-07 15:55:30 -<==      Total: 2
+2019-05-07 15:55:30 -Started AppStart in 6.914 seconds (JVM running for 7.855)
+2019-05-07 16:05:10 -==>  Preparing: SELECT ID, CODE, VALUE, REMARK FROM T_SETTING 
+2019-05-07 16:05:10 -==> Parameters: 
+2019-05-07 16:05:10 -<==      Total: 23
+2019-05-07 16:05:10 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE WHERE DRAFT = false 
+2019-05-07 16:05:10 -==> Parameters: 
+2019-05-07 16:05:10 -<==      Total: 1
+2019-05-07 16:05:10 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 16:05:10 -==> Parameters: 
+2019-05-07 16:05:10 -<==      Total: 4
+2019-05-07 16:05:10 -==>  Preparing: select count(0) from (SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 16:05:10 -==> Parameters: 
+2019-05-07 16:05:10 -<==      Total: 1
+2019-05-07 16:05:10 -==>  Preparing: SELECT AT.ID, AT.TITLE, CT.NAME CATE_NAME, AT.CREATE_TIME, AT.DRAFT, AT.APPROVE_CNT, AT.VIEWS, AT.COMMENTED, AT.APPRECIABLE, AT.TOP FROM T_ARTICLE AT LEFT JOIN T_CATE CT ON CT.ID = AT.CATE_ID WHERE AT.DRAFT = false ORDER BY AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 16:05:10 -==> Parameters: 10(Integer)
+2019-05-07 16:05:10 -<==      Total: 4
+2019-05-07 16:05:10 -==>  Preparing: SELECT TT.NAME, COUNT(TTR.TAG_ID) AS CNT FROM T_TAG_REFER TTR LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID GROUP BY TTR.TAG_ID ORDER BY CNT DESC LIMIT 30 
+2019-05-07 16:05:10 -==> Parameters: 
+2019-05-07 16:05:10 -<==      Total: 3
+2019-05-07 16:05:11 -==>  Preparing: select count(0) from (SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC) tmp_count 
+2019-05-07 16:05:11 -==> Parameters: 
+2019-05-07 16:05:11 -<==      Total: 1
+2019-05-07 16:05:11 -==>  Preparing: SELECT DISTINCT AT .ID, AT .TITLE, TC. NAME CATE_NAME, AT .CREATE_TIME, AT.SUMMARY, AT .DRAFT, AT .APPROVE_CNT, AT .VIEWS, AT .COMMENTED, AT .APPRECIABLE, AT .TOP FROM T_ARTICLE AT LEFT JOIN T_CATE TC ON TC.ID = AT .CATE_ID LEFT JOIN T_TAG_REFER TTR ON TTR.REFER_ID = `AT`.ID LEFT JOIN T_TAG TT ON TT.ID = TTR.TAG_ID WHERE AT.DRAFT = false ORDER BY AT.TOP DESC,AT.CREATE_TIME DESC LIMIT ? 
+2019-05-07 16:05:11 -==> Parameters: 10(Integer)
+2019-05-07 16:05:11 -<==      Total: 4
+2019-05-07 16:05:11 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 16:05:11 -==> Parameters: 152933278046718(Long)
+2019-05-07 16:05:11 -<==      Total: 1
+2019-05-07 16:05:11 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 16:05:11 -==> Parameters: 153215625734689(Long)
+2019-05-07 16:05:11 -<==      Total: 1
+2019-05-07 16:05:11 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 16:05:11 -==> Parameters: 152776394790103(Long)
+2019-05-07 16:05:11 -<==      Total: 1
+2019-05-07 16:05:11 -==>  Preparing: SELECT TT.ID, TT.`NAME` FROM T_TAG TT INNER JOIN T_TAG_REFER TTR ON TT.ID = TTR.TAG_ID WHERE TTR.REFER_ID = ? 
+2019-05-07 16:05:11 -==> Parameters: 152759704083198(Long)
+2019-05-07 16:05:11 -<==      Total: 1
+2019-05-07 16:06:43 -==>  Preparing: SELECT DISTINCT sm.perms FROM sys_menu sm LEFT JOIN sys_role_menu srm ON sm.menu_id = srm.menu_id LEFT JOIN sys_user_role sur ON srm.role_id = sur.role_id WHERE sur.user_id = ? 
+2019-05-07 16:06:43 -==> Parameters: 152336334290854(Long)
+2019-05-07 16:06:43 -<==      Total: 36
+2019-05-07 16:06:43 -请求地址 : http://localhost:8080/management/index
+2019-05-07 16:06:43 -HTTP METHOD : GET
+2019-05-07 16:06:43 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.index
+2019-05-07 16:06:43 -参数 : [{}]
+2019-05-07 16:06:43 -耗时 : 25
+2019-05-07 16:06:43 -返回值 : management/index
+2019-05-07 16:06:43 -请求地址 : http://localhost:8080/management/home
+2019-05-07 16:06:43 -HTTP METHOD : GET
+2019-05-07 16:06:43 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.home
+2019-05-07 16:06:43 -参数 : [{}]
+2019-05-07 16:06:43 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE 
+2019-05-07 16:06:43 -==> Parameters: 
+2019-05-07 16:06:43 -<==      Total: 1
+2019-05-07 16:06:43 -==>  Preparing: SELECT COUNT(*) FROM T_NOTE 
+2019-05-07 16:06:43 -==> Parameters: 
+2019-05-07 16:06:43 -<==      Total: 1
+2019-05-07 16:06:43 -==>  Preparing: SELECT COUNT(*) FROM T_COMMENT 
+2019-05-07 16:06:43 -==> Parameters: 
+2019-05-07 16:06:43 -<==      Total: 1
+2019-05-07 16:06:43 -==>  Preparing: SELECT TITLE, SUMMARY, CREATE_TIME FROM T_ARTICLE WHERE DRAFT = 0 ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 16:06:43 -==> Parameters: 
+2019-05-07 16:06:43 -<==      Total: 1
+2019-05-07 16:06:43 -==>  Preparing: SELECT TITLE, CONTENT, CREATE_TIME FROM T_NOTE ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 16:06:43 -==> Parameters: 
+2019-05-07 16:06:43 -<==      Total: 1
+2019-05-07 16:06:43 -==>  Preparing: SELECT TC.*, SU.NICKNAME, TA.TITLE FROM T_COMMENT TC, SYS_USER SU, T_ARTICLE TA WHERE SU.ID = TC.USER_ID AND TA.ID = TC.ARTICLE_ID ORDER BY TC.CREATE_TIME DESC LIMIT 1 
+2019-05-07 16:06:43 -==> Parameters: 
+2019-05-07 16:06:43 -<==      Total: 1
+2019-05-07 16:06:43 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 16:06:43 -==> Parameters: 
+2019-05-07 16:06:43 -<==      Total: 4
+2019-05-07 16:06:43 -耗时 : 51
+2019-05-07 16:06:43 -返回值 : management/home
+2019-05-07 16:07:01 -请求地址 : http://localhost:8080/management/about/blog
+2019-05-07 16:07:01 -HTTP METHOD : GET
+2019-05-07 16:07:01 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.AboutController.index
+2019-05-07 16:07:01 -参数 : []
+2019-05-07 16:07:01 -耗时 : 3
+2019-05-07 16:07:01 -返回值 : management/aboutblog
+2019-05-07 16:07:01 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 16:07:01 -==> Parameters: null, 152336334290854(Long), admin(String), 进入关于老爷爷页面(String), 3(Integer), net.laoyeye.yyblog.web.admin.AboutController.index()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 16:07:01.579(Timestamp)
+2019-05-07 16:07:01 -<==    Updates: 1
