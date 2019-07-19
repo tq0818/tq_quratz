@@ -3,6 +3,7 @@ package net.laoyeye.yyblog.quartz.utils;
 import org.apache.log4j.Logger;
 import org.quartz.*;
 import org.quartz.DateBuilder.IntervalUnit;
+import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.matchers.GroupMatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,7 @@ public class QuartzManager {
                     .getClass());
             JobDetail jobDetail = JobBuilder.newJob(jobClass).withIdentity(task.getJobName(), task.getJobGroup())// 任务名称和组构成任务key
                     .build();
+            jobDetail.getJobDataMap().put("taskId",task.getId());
             // 定义调度触发规则
             // 使用cornTrigger规则
             Trigger trigger = TriggerBuilder.newTrigger().withIdentity(task.getJobName(), task.getJobGroup())// 触发器key

@@ -1196,3 +1196,476 @@ Caused by: org.apache.shiro.authz.AuthorizationException: Not authorized to invo
 2019-05-07 16:07:01 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
 2019-05-07 16:07:01 -==> Parameters: null, 152336334290854(Long), admin(String), 进入关于老爷爷页面(String), 3(Integer), net.laoyeye.yyblog.web.admin.AboutController.index()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 16:07:01.579(Timestamp)
 2019-05-07 16:07:01 -<==    Updates: 1
+2019-05-07 17:22:34 -Starting AppStart on ycya-PC with PID 8600 (D:\XSRT\yyblog-master\yyblog-master\target\classes started by ycya in D:\XSRT\yyblog-master\yyblog-master)
+2019-05-07 17:22:34 -Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+2019-05-07 17:22:34 -No active profile set, falling back to default profiles: default
+2019-05-07 17:22:39 -ApplicationContext registed-->org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16d585c: startup date [Tue May 07 17:22:34 CST 2019]; root of context hierarchy
+2019-05-07 17:22:41 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task order by id asc 
+2019-05-07 17:22:41 -==> Parameters: 
+2019-05-07 17:22:41 -<==      Total: 2
+2019-05-07 17:22:41 -Started AppStart in 7.833 seconds (JVM running for 9.568)
+2019-05-07 17:22:50 -==>  Preparing: SELECT DISTINCT sm.perms FROM sys_menu sm LEFT JOIN sys_role_menu srm ON sm.menu_id = srm.menu_id LEFT JOIN sys_user_role sur ON srm.role_id = sur.role_id WHERE sur.user_id = ? 
+2019-05-07 17:22:50 -==> Parameters: 152336334290854(Long)
+2019-05-07 17:22:50 -<==      Total: 36
+2019-05-07 17:22:50 -请求地址 : http://localhost:8080/management/index
+2019-05-07 17:22:50 -HTTP METHOD : GET
+2019-05-07 17:22:50 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.index
+2019-05-07 17:22:50 -参数 : [{}]
+2019-05-07 17:22:50 -耗时 : 5
+2019-05-07 17:22:50 -返回值 : management/index
+2019-05-07 17:22:51 -请求地址 : http://localhost:8080/management/home
+2019-05-07 17:22:51 -HTTP METHOD : GET
+2019-05-07 17:22:51 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.home
+2019-05-07 17:22:51 -参数 : [{}]
+2019-05-07 17:22:51 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE 
+2019-05-07 17:22:51 -==> Parameters: 
+2019-05-07 17:22:51 -<==      Total: 1
+2019-05-07 17:22:51 -==>  Preparing: SELECT COUNT(*) FROM T_NOTE 
+2019-05-07 17:22:51 -==> Parameters: 
+2019-05-07 17:22:51 -<==      Total: 1
+2019-05-07 17:22:51 -==>  Preparing: SELECT COUNT(*) FROM T_COMMENT 
+2019-05-07 17:22:51 -==> Parameters: 
+2019-05-07 17:22:51 -<==      Total: 1
+2019-05-07 17:22:51 -==>  Preparing: SELECT TITLE, SUMMARY, CREATE_TIME FROM T_ARTICLE WHERE DRAFT = 0 ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 17:22:51 -==> Parameters: 
+2019-05-07 17:22:51 -<==      Total: 1
+2019-05-07 17:22:51 -==>  Preparing: SELECT TITLE, CONTENT, CREATE_TIME FROM T_NOTE ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 17:22:51 -==> Parameters: 
+2019-05-07 17:22:51 -<==      Total: 1
+2019-05-07 17:22:51 -==>  Preparing: SELECT TC.*, SU.NICKNAME, TA.TITLE FROM T_COMMENT TC, SYS_USER SU, T_ARTICLE TA WHERE SU.ID = TC.USER_ID AND TA.ID = TC.ARTICLE_ID ORDER BY TC.CREATE_TIME DESC LIMIT 1 
+2019-05-07 17:22:51 -==> Parameters: 
+2019-05-07 17:22:51 -<==      Total: 1
+2019-05-07 17:22:51 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 17:22:51 -==> Parameters: 
+2019-05-07 17:22:51 -<==      Total: 4
+2019-05-07 17:22:51 -耗时 : 50
+2019-05-07 17:22:51 -返回值 : management/home
+2019-05-07 17:22:53 -请求地址 : http://localhost:8080/management/task
+2019-05-07 17:22:53 -HTTP METHOD : GET
+2019-05-07 17:22:53 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob
+2019-05-07 17:22:53 -参数 : []
+2019-05-07 17:22:53 -耗时 : 10
+2019-05-07 17:22:53 -返回值 : management/task
+2019-05-07 17:22:53 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:22:53 -==> Parameters: null, 152336334290854(Long), admin(String), 进入任务管理界面(String), 10(Integer), net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 17:22:53.657(Timestamp)
+2019-05-07 17:22:53 -<==    Updates: 1
+2019-05-07 17:22:53 -请求地址 : http://localhost:8080/management/task/list
+2019-05-07 17:22:53 -HTTP METHOD : POST
+2019-05-07 17:22:53 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.list
+2019-05-07 17:22:53 -参数 : [net.laoyeye.yyblog.model.query.TaskQuery@7ca063]
+2019-05-07 17:22:53 -==>  Preparing: SELECT count(0) FROM sys_task 
+2019-05-07 17:22:53 -==> Parameters: 
+2019-05-07 17:22:53 -<==      Total: 1
+2019-05-07 17:22:53 -==>  Preparing: select `id`,`job_name`,`description`,`cron_expression`,`bean_class`,`job_status`,`job_group` from sys_task order by id asc LIMIT ? 
+2019-05-07 17:22:53 -==> Parameters: 10(Integer)
+2019-05-07 17:22:53 -<==      Total: 2
+2019-05-07 17:22:53 -耗时 : 90
+2019-05-07 17:22:53 -返回值 : net.laoyeye.yyblog.common.DataGridResult@a17802
+2019-05-07 17:23:06 -请求地址 : http://localhost:8080/management/task/edit
+2019-05-07 17:23:06 -HTTP METHOD : POST
+2019-05-07 17:23:06 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.edit
+2019-05-07 17:23:06 -参数 : [net.laoyeye.yyblog.model.TaskDO@1d95532]
+2019-05-07 17:23:06 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:23:06 -==> Parameters: 32(Long)
+2019-05-07 17:23:06 -<==      Total: 1
+2019-05-07 17:23:06 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ? where id = ? 
+2019-05-07 17:23:06 -==> Parameters: 测试任务(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 0(String), group(String), 32(Long)
+2019-05-07 17:23:06 -<==    Updates: 1
+2019-05-07 17:23:06 -耗时 : 17
+2019-05-07 17:23:06 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@11075c0
+2019-05-07 17:23:06 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:23:06 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务(String), 18(Integer), net.laoyeye.yyblog.web.admin.TaskController.edit()(String), [net.laoyeye.yyblog.model.TaskDO@1d95532](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.HelloWorldJob","cronExpression":"0/5 * * * * ?","description":"测试新增任务","id":32,"jobGroup":"group","jobName":"测试任务","jobStatus":"0"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:23:06.34(Timestamp)
+2019-05-07 17:23:06 -<==    Updates: 1
+2019-05-07 17:23:10 -请求地址 : http://localhost:8080/management/task/edit
+2019-05-07 17:23:10 -HTTP METHOD : POST
+2019-05-07 17:23:10 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.edit
+2019-05-07 17:23:10 -参数 : [net.laoyeye.yyblog.model.TaskDO@92d85e]
+2019-05-07 17:23:10 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:23:10 -==> Parameters: 32(Long)
+2019-05-07 17:23:10 -<==      Total: 1
+2019-05-07 17:23:10 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ? where id = ? 
+2019-05-07 17:23:10 -==> Parameters: helloword(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 0(String), group(String), 32(Long)
+2019-05-07 17:23:10 -<==    Updates: 1
+2019-05-07 17:23:10 -耗时 : 19
+2019-05-07 17:23:10 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@104542b
+2019-05-07 17:23:10 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:23:10 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务(String), 19(Integer), net.laoyeye.yyblog.web.admin.TaskController.edit()(String), [net.laoyeye.yyblog.model.TaskDO@92d85e](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.HelloWorldJob","cronExpression":"0/5 * * * * ?","description":"测试新增任务","id":32,"jobGroup":"group","jobName":"helloword","jobStatus":"0"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:23:10.894(Timestamp)
+2019-05-07 17:23:10 -<==    Updates: 1
+2019-05-07 17:23:12 -请求地址 : http://localhost:8080/management/task/changeStatus/27
+2019-05-07 17:23:12 -HTTP METHOD : POST
+2019-05-07 17:23:12 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 17:23:12 -参数 : [27, true]
+2019-05-07 17:23:12 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:23:12 -==> Parameters: 27(Long)
+2019-05-07 17:23:12 -<==      Total: 1
+2019-05-07 17:23:12 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 17:23:12 -==> Parameters: helloword(String), 跑批配置测试(String), 0/10 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 1(String), group(String), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), 27(Long)
+2019-05-07 17:23:12 -<==    Updates: 1
+2019-05-07 17:23:12 -耗时 : 26
+2019-05-07 17:23:12 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@13afe47
+2019-05-07 17:23:12 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:23:12 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 26(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [27, true](String), 27(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:23:12.502(Timestamp)
+2019-05-07 17:23:12 -<==    Updates: 1
+2019-05-07 17:23:12 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 17:23:12 -HTTP METHOD : POST
+2019-05-07 17:23:12 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 17:23:12 -参数 : [32, true]
+2019-05-07 17:23:12 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:23:12 -==> Parameters: 32(Long)
+2019-05-07 17:23:12 -<==      Total: 1
+2019-05-07 17:23:12 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 17:23:12 -==> Parameters: helloword(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 1(String), group(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 17:23:12 -<==    Updates: 1
+2019-05-07 17:23:12 -耗时 : 17
+2019-05-07 17:23:12 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@4b3b4a
+2019-05-07 17:23:12 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:23:12 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 17(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, true](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:23:12.983(Timestamp)
+2019-05-07 17:23:12 -<==    Updates: 1
+2019-05-07 17:23:50 -请求地址 : http://localhost:8080/management/task/run/32
+2019-05-07 17:23:50 -HTTP METHOD : POST
+2019-05-07 17:23:50 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.run
+2019-05-07 17:23:50 -参数 : [32]
+2019-05-07 17:23:50 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:23:50 -==> Parameters: 32(Long)
+2019-05-07 17:23:50 -<==      Total: 1
+2019-05-07 17:23:50 -耗时 : 5
+2019-05-07 17:23:50 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@bdea44
+2019-05-07 17:23:50 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:23:50 -==> Parameters: null, 152336334290854(Long), admin(String), 立即运行任务(String), 5(Integer), net.laoyeye.yyblog.web.admin.TaskController.run()(String), [32](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:23:50.499(Timestamp)
+2019-05-07 17:23:50 -<==    Updates: 1
+2019-05-07 17:25:01 -请求地址 : http://localhost:8080/management/task/changeStatus/27
+2019-05-07 17:25:01 -HTTP METHOD : POST
+2019-05-07 17:25:01 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 17:25:01 -参数 : [27, false]
+2019-05-07 17:25:01 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:25:01 -==> Parameters: 27(Long)
+2019-05-07 17:25:01 -<==      Total: 1
+2019-05-07 17:25:01 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 17:25:01 -==> Parameters: helloword(String), 跑批配置测试(String), 0/10 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 0(String), group(String), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), 27(Long)
+2019-05-07 17:25:01 -<==    Updates: 1
+2019-05-07 17:25:01 -耗时 : 28
+2019-05-07 17:25:01 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1a3172e
+2019-05-07 17:25:01 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:25:01 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 28(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [27, false](String), 27(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:25:01.896(Timestamp)
+2019-05-07 17:25:01 -<==    Updates: 1
+2019-05-07 17:25:34 -请求地址 : http://localhost:8080/management/task/run/32
+2019-05-07 17:25:34 -HTTP METHOD : POST
+2019-05-07 17:25:34 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.run
+2019-05-07 17:25:34 -参数 : [32]
+2019-05-07 17:25:34 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:25:34 -==> Parameters: 32(Long)
+2019-05-07 17:25:34 -<==      Total: 1
+2019-05-07 17:25:34 -耗时 : 14
+2019-05-07 17:25:34 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@8d4926
+2019-05-07 17:25:34 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:25:34 -==> Parameters: null, 152336334290854(Long), admin(String), 立即运行任务(String), 14(Integer), net.laoyeye.yyblog.web.admin.TaskController.run()(String), [32](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:25:34.503(Timestamp)
+2019-05-07 17:25:34 -<==    Updates: 1
+2019-05-07 17:25:58 -请求地址 : http://localhost:8080/management/task/edit
+2019-05-07 17:25:58 -HTTP METHOD : POST
+2019-05-07 17:25:58 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.edit
+2019-05-07 17:25:58 -参数 : [net.laoyeye.yyblog.model.TaskDO@1050cee]
+2019-05-07 17:25:58 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:25:58 -==> Parameters: 32(Long)
+2019-05-07 17:25:58 -<==      Total: 1
+2019-05-07 17:25:58 -耗时 : 11
+2019-05-07 17:25:58 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@103cd2d
+2019-05-07 17:25:58 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:25:58 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务(String), 12(Integer), net.laoyeye.yyblog.web.admin.TaskController.edit()(String), [net.laoyeye.yyblog.model.TaskDO@1050cee](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.HelloWorldJob","cronExpression":"0/5 * * * * ?","description":"测试新增任务","id":32,"jobGroup":"group1","jobName":"helloword","jobStatus":"0"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:25:58.079(Timestamp)
+2019-05-07 17:25:58 -<==    Updates: 1
+2019-05-07 17:26:00 -请求地址 : http://localhost:8080/management/task/edit
+2019-05-07 17:26:00 -HTTP METHOD : POST
+2019-05-07 17:26:00 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.edit
+2019-05-07 17:26:00 -参数 : [net.laoyeye.yyblog.model.TaskDO@1e2b6a0]
+2019-05-07 17:26:00 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:26:00 -==> Parameters: 32(Long)
+2019-05-07 17:26:00 -<==      Total: 1
+2019-05-07 17:26:00 -耗时 : 12
+2019-05-07 17:26:00 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@dfbc9b
+2019-05-07 17:26:00 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:26:00 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务(String), 12(Integer), net.laoyeye.yyblog.web.admin.TaskController.edit()(String), [net.laoyeye.yyblog.model.TaskDO@1e2b6a0](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.HelloWorldJob","cronExpression":"0/5 * * * * ?","description":"测试新增任务","id":32,"jobGroup":"group1","jobName":"helloword1","jobStatus":"0"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:26:00.978(Timestamp)
+2019-05-07 17:26:00 -<==    Updates: 1
+2019-05-07 17:26:01 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 17:26:01 -HTTP METHOD : POST
+2019-05-07 17:26:01 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 17:26:01 -参数 : [32, false]
+2019-05-07 17:26:01 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:26:01 -==> Parameters: 32(Long)
+2019-05-07 17:26:01 -<==      Total: 1
+2019-05-07 17:26:01 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 17:26:01 -==> Parameters: helloword(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 0(String), group(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 17:26:01 -<==    Updates: 1
+2019-05-07 17:26:01 -耗时 : 7
+2019-05-07 17:26:01 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@b68583
+2019-05-07 17:26:01 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:26:01 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 7(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, false](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:26:01.053(Timestamp)
+2019-05-07 17:26:01 -<==    Updates: 1
+2019-05-07 17:26:04 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 17:26:04 -HTTP METHOD : POST
+2019-05-07 17:26:04 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 17:26:04 -参数 : [32, true]
+2019-05-07 17:26:04 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:26:04 -==> Parameters: 32(Long)
+2019-05-07 17:26:04 -<==      Total: 1
+2019-05-07 17:26:04 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 17:26:04 -==> Parameters: helloword(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 1(String), group(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 17:26:04 -<==    Updates: 1
+2019-05-07 17:26:04 -耗时 : 19
+2019-05-07 17:26:04 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1619126
+2019-05-07 17:26:04 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:26:04 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 20(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, true](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:26:04.876(Timestamp)
+2019-05-07 17:26:04 -<==    Updates: 1
+2019-05-07 17:26:17 -请求地址 : http://localhost:8080/management/task/changeStatus/27
+2019-05-07 17:26:17 -HTTP METHOD : POST
+2019-05-07 17:26:17 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 17:26:17 -参数 : [27, true]
+2019-05-07 17:26:17 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 17:26:17 -==> Parameters: 27(Long)
+2019-05-07 17:26:17 -<==      Total: 1
+2019-05-07 17:26:17 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 17:26:17 -==> Parameters: helloword(String), 跑批配置测试(String), 0/10 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 1(String), group(String), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), 27(Long)
+2019-05-07 17:26:17 -<==    Updates: 1
+2019-05-07 17:26:17 -耗时 : 61
+2019-05-07 17:26:17 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@83569
+2019-05-07 17:26:17 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:26:17 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 62(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [27, true](String), 27(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 17:26:17.24(Timestamp)
+2019-05-07 17:26:17 -<==    Updates: 1
+2019-05-07 17:59:55 -==>  Preparing: SELECT DISTINCT sm.perms FROM sys_menu sm LEFT JOIN sys_role_menu srm ON sm.menu_id = srm.menu_id LEFT JOIN sys_user_role sur ON srm.role_id = sur.role_id WHERE sur.user_id = ? 
+2019-05-07 17:59:55 -==> Parameters: 152336334290854(Long)
+2019-05-07 17:59:55 -<==      Total: 36
+2019-05-07 17:59:55 -请求地址 : http://localhost:8080/management/index
+2019-05-07 17:59:55 -HTTP METHOD : GET
+2019-05-07 17:59:55 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.index
+2019-05-07 17:59:55 -参数 : [{}]
+2019-05-07 17:59:55 -耗时 : 3
+2019-05-07 17:59:55 -返回值 : management/index
+2019-05-07 17:59:56 -请求地址 : http://localhost:8080/management/home
+2019-05-07 17:59:56 -HTTP METHOD : GET
+2019-05-07 17:59:56 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.IndexController.home
+2019-05-07 17:59:56 -参数 : [{}]
+2019-05-07 17:59:56 -==>  Preparing: SELECT COUNT(*) FROM T_ARTICLE 
+2019-05-07 17:59:56 -==> Parameters: 
+2019-05-07 17:59:56 -<==      Total: 1
+2019-05-07 17:59:56 -==>  Preparing: SELECT COUNT(*) FROM T_NOTE 
+2019-05-07 17:59:56 -==> Parameters: 
+2019-05-07 17:59:56 -<==      Total: 1
+2019-05-07 17:59:56 -==>  Preparing: SELECT COUNT(*) FROM T_COMMENT 
+2019-05-07 17:59:56 -==> Parameters: 
+2019-05-07 17:59:56 -<==      Total: 1
+2019-05-07 17:59:56 -==>  Preparing: SELECT TITLE, SUMMARY, CREATE_TIME FROM T_ARTICLE WHERE DRAFT = 0 ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 17:59:56 -==> Parameters: 
+2019-05-07 17:59:56 -<==      Total: 1
+2019-05-07 17:59:56 -==>  Preparing: SELECT TITLE, CONTENT, CREATE_TIME FROM T_NOTE ORDER BY CREATE_TIME DESC LIMIT 1 
+2019-05-07 17:59:56 -==> Parameters: 
+2019-05-07 17:59:56 -<==      Total: 1
+2019-05-07 17:59:56 -==>  Preparing: SELECT TC.*, SU.NICKNAME, TA.TITLE FROM T_COMMENT TC, SYS_USER SU, T_ARTICLE TA WHERE SU.ID = TC.USER_ID AND TA.ID = TC.ARTICLE_ID ORDER BY TC.CREATE_TIME DESC LIMIT 1 
+2019-05-07 17:59:56 -==> Parameters: 
+2019-05-07 17:59:56 -<==      Total: 1
+2019-05-07 17:59:56 -==>  Preparing: SELECT ID, CODE, NAME FROM T_CATE ORDER BY ID 
+2019-05-07 17:59:56 -==> Parameters: 
+2019-05-07 17:59:56 -<==      Total: 4
+2019-05-07 17:59:56 -耗时 : 23
+2019-05-07 17:59:56 -返回值 : management/home
+2019-05-07 17:59:58 -请求地址 : http://localhost:8080/management/task
+2019-05-07 17:59:58 -HTTP METHOD : GET
+2019-05-07 17:59:58 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob
+2019-05-07 17:59:58 -参数 : []
+2019-05-07 17:59:58 -耗时 : 0
+2019-05-07 17:59:58 -返回值 : management/task
+2019-05-07 17:59:58 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 17:59:58 -==> Parameters: null, 152336334290854(Long), admin(String), 进入任务管理界面(String), 2(Integer), net.laoyeye.yyblog.web.admin.TaskController.taskScheduleJob()(String), [](String), null, 0:0:0:0:0:0:0:1(String), 2019-05-07 17:59:58.288(Timestamp)
+2019-05-07 17:59:58 -<==    Updates: 1
+2019-05-07 17:59:58 -请求地址 : http://localhost:8080/management/task/list
+2019-05-07 17:59:58 -HTTP METHOD : POST
+2019-05-07 17:59:58 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.list
+2019-05-07 17:59:58 -参数 : [net.laoyeye.yyblog.model.query.TaskQuery@45b830]
+2019-05-07 17:59:58 -==>  Preparing: SELECT count(0) FROM sys_task 
+2019-05-07 17:59:58 -==> Parameters: 
+2019-05-07 17:59:58 -<==      Total: 1
+2019-05-07 17:59:58 -==>  Preparing: select `id`,`job_name`,`description`,`cron_expression`,`bean_class`,`job_status`,`job_group` from sys_task order by id asc LIMIT ? 
+2019-05-07 17:59:58 -==> Parameters: 10(Integer)
+2019-05-07 17:59:58 -<==      Total: 2
+2019-05-07 17:59:58 -耗时 : 6
+2019-05-07 17:59:58 -返回值 : net.laoyeye.yyblog.common.DataGridResult@64f5d5
+2019-05-07 18:00:07 -请求地址 : http://localhost:8080/management/task/edit
+2019-05-07 18:00:07 -HTTP METHOD : POST
+2019-05-07 18:00:07 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.edit
+2019-05-07 18:00:07 -参数 : [net.laoyeye.yyblog.model.TaskDO@f043d4]
+2019-05-07 18:00:07 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 18:00:07 -==> Parameters: 32(Long)
+2019-05-07 18:00:07 -<==      Total: 1
+2019-05-07 18:00:07 -耗时 : 9
+2019-05-07 18:00:07 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@195820c
+2019-05-07 18:00:07 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:00:07 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务(String), 9(Integer), net.laoyeye.yyblog.web.admin.TaskController.edit()(String), [net.laoyeye.yyblog.model.TaskDO@f043d4](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.OpenJob","cronExpression":"0/5 * * * * ?","description":"测试新增任务","id":32,"jobGroup":"group1","jobName":"helloword1","jobStatus":"1"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:00:07.469(Timestamp)
+2019-05-07 18:00:07 -<==    Updates: 1
+2019-05-07 18:00:09 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 18:00:09 -HTTP METHOD : POST
+2019-05-07 18:00:09 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 18:00:09 -参数 : [32, false]
+2019-05-07 18:00:09 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 18:00:09 -==> Parameters: 32(Long)
+2019-05-07 18:00:09 -<==      Total: 1
+2019-05-07 18:00:09 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 18:00:09 -==> Parameters: helloword1(String), 测试新增任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 0(String), group1(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 18:00:09 -<==    Updates: 1
+2019-05-07 18:00:09 -耗时 : 13
+2019-05-07 18:00:09 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@f864f8
+2019-05-07 18:00:09 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:00:09 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 14(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, false](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:00:09.714(Timestamp)
+2019-05-07 18:00:09 -<==    Updates: 1
+2019-05-07 18:00:26 -请求地址 : http://localhost:8080/management/task/edit
+2019-05-07 18:00:26 -HTTP METHOD : POST
+2019-05-07 18:00:26 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.edit
+2019-05-07 18:00:26 -参数 : [net.laoyeye.yyblog.model.TaskDO@f7232e]
+2019-05-07 18:00:26 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 18:00:26 -==> Parameters: 32(Long)
+2019-05-07 18:00:26 -<==      Total: 1
+2019-05-07 18:00:26 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ? where id = ? 
+2019-05-07 18:00:26 -==> Parameters: helloword1(String), 开灯任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.OpenJob(String), 1(String), group1(String), 32(Long)
+2019-05-07 18:00:26 -<==    Updates: 1
+2019-05-07 18:00:26 -耗时 : 12
+2019-05-07 18:00:26 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@279360
+2019-05-07 18:00:26 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:00:26 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务(String), 12(Integer), net.laoyeye.yyblog.web.admin.TaskController.edit()(String), [net.laoyeye.yyblog.model.TaskDO@f7232e](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.OpenJob","cronExpression":"0/5 * * * * ?","description":"开灯任务","id":32,"jobGroup":"group1","jobName":"helloword1","jobStatus":"1"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:00:26.953(Timestamp)
+2019-05-07 18:00:26 -<==    Updates: 1
+2019-05-07 18:00:37 -请求地址 : http://localhost:8080/management/task/add
+2019-05-07 18:00:37 -HTTP METHOD : GET
+2019-05-07 18:00:37 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.taskAddScheduleJob
+2019-05-07 18:00:37 -参数 : []
+2019-05-07 18:00:37 -耗时 : 1
+2019-05-07 18:00:37 -返回值 : management/task_add
+2019-05-07 18:01:32 -请求地址 : http://localhost:8080/management/task/save
+2019-05-07 18:01:32 -HTTP METHOD : POST
+2019-05-07 18:01:32 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.save
+2019-05-07 18:01:32 -参数 : [net.laoyeye.yyblog.model.TaskDO@1812492]
+2019-05-07 18:01:32 -==>  Preparing: insert into sys_task (id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:01:32 -==> Parameters: null, closeJob(String), 关灯(String), 0/2 * * * * ?(String), net.laoyeye.yyblog.quartz.task.CloseJob(String), 0(String), close(String), admin(String), 2019-05-07 18:01:32.202(Timestamp), admin(String), 2019-05-07 18:01:32.202(Timestamp)
+2019-05-07 18:01:32 -<==    Updates: 1
+2019-05-07 18:01:32 -耗时 : 5
+2019-05-07 18:01:32 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@183ddc3
+2019-05-07 18:01:32 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:01:32 -==> Parameters: null, 152336334290854(Long), admin(String), 新增任务(String), 5(Integer), net.laoyeye.yyblog.web.admin.TaskController.save()(String), [net.laoyeye.yyblog.model.TaskDO@1812492](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.CloseJob","createTime":1557223292202,"createUser":"admin","cronExpression":"0/2 * * * * ?","description":"关灯","jobGroup":"close","jobName":"closeJob","jobStatus":"0","updateTime":1557223292202,"updateUser":"admin"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:01:32.209(Timestamp)
+2019-05-07 18:01:32 -<==    Updates: 1
+2019-05-07 18:01:32 -请求地址 : http://localhost:8080/management/task/list
+2019-05-07 18:01:32 -HTTP METHOD : POST
+2019-05-07 18:01:32 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.list
+2019-05-07 18:01:32 -参数 : [net.laoyeye.yyblog.model.query.TaskQuery@2886c1]
+2019-05-07 18:01:32 -==>  Preparing: SELECT count(0) FROM sys_task 
+2019-05-07 18:01:32 -==> Parameters: 
+2019-05-07 18:01:32 -<==      Total: 1
+2019-05-07 18:01:32 -==>  Preparing: select `id`,`job_name`,`description`,`cron_expression`,`bean_class`,`job_status`,`job_group` from sys_task order by id asc LIMIT ? 
+2019-05-07 18:01:32 -==> Parameters: 10(Integer)
+2019-05-07 18:01:32 -<==      Total: 3
+2019-05-07 18:01:32 -耗时 : 6
+2019-05-07 18:01:32 -返回值 : net.laoyeye.yyblog.common.DataGridResult@25632e
+2019-05-07 18:01:43 -请求地址 : http://localhost:8080/management/task/edit
+2019-05-07 18:01:43 -HTTP METHOD : POST
+2019-05-07 18:01:43 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.edit
+2019-05-07 18:01:43 -参数 : [net.laoyeye.yyblog.model.TaskDO@16c6135]
+2019-05-07 18:01:43 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 18:01:43 -==> Parameters: 32(Long)
+2019-05-07 18:01:43 -<==      Total: 1
+2019-05-07 18:01:43 -耗时 : 5
+2019-05-07 18:01:43 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1e393eb
+2019-05-07 18:01:43 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:01:43 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务(String), 6(Integer), net.laoyeye.yyblog.web.admin.TaskController.edit()(String), [net.laoyeye.yyblog.model.TaskDO@16c6135](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.OpenJob","cronExpression":"0/5 * * * * ?","description":"开灯任务","id":32,"jobGroup":"group1","jobName":"openJob","jobStatus":"1"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:01:43.118(Timestamp)
+2019-05-07 18:01:43 -<==    Updates: 1
+2019-05-07 18:01:45 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 18:01:45 -HTTP METHOD : POST
+2019-05-07 18:01:45 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 18:01:45 -参数 : [32, false]
+2019-05-07 18:01:45 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 18:01:45 -==> Parameters: 32(Long)
+2019-05-07 18:01:45 -<==      Total: 1
+2019-05-07 18:01:45 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 18:01:45 -==> Parameters: helloword1(String), 开灯任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.OpenJob(String), 0(String), group1(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 18:01:45 -<==    Updates: 1
+2019-05-07 18:01:45 -耗时 : 14
+2019-05-07 18:01:45 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1807b8a
+2019-05-07 18:01:45 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:01:45 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 14(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, false](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:01:45.691(Timestamp)
+2019-05-07 18:01:45 -<==    Updates: 1
+2019-05-07 18:01:50 -请求地址 : http://localhost:8080/management/task/edit
+2019-05-07 18:01:50 -HTTP METHOD : POST
+2019-05-07 18:01:50 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.edit
+2019-05-07 18:01:50 -参数 : [net.laoyeye.yyblog.model.TaskDO@960985]
+2019-05-07 18:01:50 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 18:01:50 -==> Parameters: 32(Long)
+2019-05-07 18:01:50 -<==      Total: 1
+2019-05-07 18:01:50 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ? where id = ? 
+2019-05-07 18:01:50 -==> Parameters: openJob(String), 开灯任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.OpenJob(String), 1(String), open(String), 32(Long)
+2019-05-07 18:01:50 -<==    Updates: 1
+2019-05-07 18:01:50 -耗时 : 7
+2019-05-07 18:01:50 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@74ec46
+2019-05-07 18:01:50 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:01:50 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务(String), 7(Integer), net.laoyeye.yyblog.web.admin.TaskController.edit()(String), [net.laoyeye.yyblog.model.TaskDO@960985](String), {"beanClass":"net.laoyeye.yyblog.quartz.task.OpenJob","cronExpression":"0/5 * * * * ?","description":"开灯任务","id":32,"jobGroup":"open","jobName":"openJob","jobStatus":"1"}(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:01:50.605(Timestamp)
+2019-05-07 18:01:50 -<==    Updates: 1
+2019-05-07 18:01:53 -请求地址 : http://localhost:8080/management/task/changeStatus/27
+2019-05-07 18:01:53 -HTTP METHOD : POST
+2019-05-07 18:01:53 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 18:01:53 -参数 : [27, false]
+2019-05-07 18:01:53 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 18:01:53 -==> Parameters: 27(Long)
+2019-05-07 18:01:53 -<==      Total: 1
+2019-05-07 18:01:53 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 18:01:53 -==> Parameters: helloword(String), 跑批配置测试(String), 0/10 * * * * ?(String), net.laoyeye.yyblog.quartz.task.HelloWorldJob(String), 0(String), group(String), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), zhangzhuo(String), 2018-06-29 23:31:42.0(Timestamp), 27(Long)
+2019-05-07 18:01:53 -<==    Updates: 1
+2019-05-07 18:01:53 -耗时 : 19
+2019-05-07 18:01:53 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1470529
+2019-05-07 18:01:53 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:01:53 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 20(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [27, false](String), 27(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:01:53.393(Timestamp)
+2019-05-07 18:01:53 -<==    Updates: 1
+2019-05-07 18:02:07 -请求地址 : http://localhost:8080/management/task/changeStatus/32
+2019-05-07 18:02:07 -HTTP METHOD : POST
+2019-05-07 18:02:07 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 18:02:07 -参数 : [32, true]
+2019-05-07 18:02:07 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 18:02:07 -==> Parameters: 32(Long)
+2019-05-07 18:02:07 -<==      Total: 1
+2019-05-07 18:02:07 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 18:02:07 -==> Parameters: openJob(String), 开灯任务(String), 0/5 * * * * ?(String), net.laoyeye.yyblog.quartz.task.OpenJob(String), 1(String), open(String), admin(String), 2019-05-07 15:45:46.0(Timestamp), admin(String), 2019-05-07 15:45:46.0(Timestamp), 32(Long)
+2019-05-07 18:02:07 -<==    Updates: 1
+2019-05-07 18:02:07 -耗时 : 11
+2019-05-07 18:02:07 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1d98a2
+2019-05-07 18:02:07 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:02:07 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 11(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [32, true](String), 32(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:02:07.741(Timestamp)
+2019-05-07 18:02:07 -<==    Updates: 1
+2019-05-07 18:02:08 -请求地址 : http://localhost:8080/management/task/changeStatus/33
+2019-05-07 18:02:08 -HTTP METHOD : POST
+2019-05-07 18:02:08 -CLASS_METHOD : net.laoyeye.yyblog.web.admin.TaskController.changeStatus
+2019-05-07 18:02:08 -参数 : [33, true]
+2019-05-07 18:02:08 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task where id = ? 
+2019-05-07 18:02:08 -==> Parameters: 33(Long)
+2019-05-07 18:02:08 -<==      Total: 1
+2019-05-07 18:02:08 -==>  Preparing: update sys_task SET job_name = ?, description = ?, cron_expression = ?, bean_class = ?, job_status = ?, job_group = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where id = ? 
+2019-05-07 18:02:08 -==> Parameters: closeJob(String), 关灯(String), 0/2 * * * * ?(String), net.laoyeye.yyblog.quartz.task.CloseJob(String), 1(String), close(String), admin(String), 2019-05-07 18:01:32.0(Timestamp), admin(String), 2019-05-07 18:01:32.0(Timestamp), 33(Long)
+2019-05-07 18:02:08 -<==    Updates: 1
+2019-05-07 18:02:08 -耗时 : 7
+2019-05-07 18:02:08 -返回值 : net.laoyeye.yyblog.common.YYBlogResult@1240dc
+2019-05-07 18:02:08 -==>  Preparing: insert into sys_log (id, user_id, username, operation, time, method, params, params2, ip, create_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2019-05-07 18:02:08 -==> Parameters: null, 152336334290854(Long), admin(String), 修改任务状态(String), 7(Integer), net.laoyeye.yyblog.web.admin.TaskController.changeStatus()(String), [33, true](String), 33(String), 0:0:0:0:0:0:0:1(String), 2019-05-07 18:02:08.092(Timestamp)
+2019-05-07 18:02:08 -<==    Updates: 1
+2019-05-07 18:02:34 -Starting AppStart on ycya-PC with PID 9064 (D:\XSRT\yyblog-master\yyblog-master\target\classes started by ycya in D:\XSRT\yyblog-master\yyblog-master)
+2019-05-07 18:02:34 -Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+2019-05-07 18:02:34 -No active profile set, falling back to default profiles: default
+2019-05-07 18:02:38 -ApplicationContext registed-->org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fb6037: startup date [Tue May 07 18:02:34 CST 2019]; root of context hierarchy
+2019-05-07 18:02:40 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task order by id asc 
+2019-05-07 18:02:40 -==> Parameters: 
+2019-05-07 18:02:40 -<==      Total: 3
+2019-05-07 18:02:40 -Started AppStart in 7.003 seconds (JVM running for 7.875)
+2019-05-07 18:08:39 -Starting AppStart on ycya-PC with PID 10076 (D:\XSRT\yyblog-master\yyblog-master\target\classes started by ycya in D:\XSRT\yyblog-master\yyblog-master)
+2019-05-07 18:08:39 -Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+2019-05-07 18:08:39 -No active profile set, falling back to default profiles: default
+2019-05-07 18:08:45 -ApplicationContext registed-->org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@98770d: startup date [Tue May 07 18:08:39 CST 2019]; root of context hierarchy
+2019-05-07 18:08:49 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task order by id asc 
+2019-05-07 18:08:49 -==> Parameters: 
+2019-05-07 18:08:49 -<==      Total: 3
+2019-05-07 18:08:49 -Started AppStart in 10.508 seconds (JVM running for 12.37)
+2019-05-07 18:16:42 -Starting AppStart on ycya-PC with PID 6988 (D:\XSRT\yyblog-master\yyblog-master\target\classes started by ycya in D:\XSRT\yyblog-master\yyblog-master)
+2019-05-07 18:16:42 -Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+2019-05-07 18:16:42 -No active profile set, falling back to default profiles: default
+2019-05-07 18:16:46 -ApplicationContext registed-->org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@127a732: startup date [Tue May 07 18:16:42 CST 2019]; root of context hierarchy
+2019-05-07 18:16:49 -==>  Preparing: select id, job_name, description, cron_expression, bean_class, job_status, job_group, create_user, create_time, update_user, update_time from sys_task order by id asc 
+2019-05-07 18:16:49 -==> Parameters: 
+2019-05-07 18:16:49 -<==      Total: 3
+2019-05-07 18:16:49 -Started AppStart in 7.38 seconds (JVM running for 8.502)
